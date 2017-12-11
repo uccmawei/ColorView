@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="textColorNormal" format="color"/>
+    <attr name="textColorPressed" format="color"/>
+    <attr name="textColorSelected" format="color"/>
+    <attr name="textColorChecked" format="color"/>
+    <attr name="textColorUnable" format="color"/>
+
+    <attr name="backgroundColorNormal" format="color"/>
+    <attr name="backgroundColorPressed" format="color"/>
+    <attr name="backgroundColorSelected" format="color"/>
+    <attr name="backgroundColorChecked" format="color"/>
+    <attr name="backgroundColorUnable" format="color"/>
+
+    <attr name="backgroundDrawableNormal" format="reference"/>
+    <attr name="backgroundDrawablePressed" format="reference"/>
+    <attr name="backgroundDrawableSelected" format="reference"/>
+    <attr name="backgroundDrawableChecked" format="reference"/>
+    <attr name="backgroundDrawableUnable" format="reference"/>
+
+    <attr name="srcDrawableNormal" format="reference"/>
+    <attr name="srcDrawablePressed" format="reference"/>
+    <attr name="srcDrawableSelected" format="reference"/>
+    <attr name="srcDrawableChecked" format="reference"/>
+    <attr name="srcDrawableUnable" format="reference"/>
+
+    <attr name="cornerRadius" format="dimension"/>
+    <attr name="cornerRadiusTopLeft" format="dimension"/>
+    <attr name="cornerRadiusTopRight" format="dimension"/>
+    <attr name="cornerRadiusBottomLeft" format="dimension"/>
+    <attr name="cornerRadiusBottomRight" format="dimension"/>
+
+    <attr name="borderWidth" format="dimension"/>
+    <attr name="borderDashGap" format="dimension"/>
+    <attr name="borderDashWidth" format="dimension"/>
+
+    <attr name="borderColorNormal" format="color"/>
+    <attr name="borderColorPressed" format="color"/>
+    <attr name="borderColorSelected" format="color"/>
+    <attr name="borderColorChecked" format="color"/>
+    <attr name="borderColorUnable" format="color"/>
+
+    <declare-styleable name="ColorButton">
+        <attr name="textColorNormal"/>
+        <attr name="textColorPressed"/>
+        <attr name="textColorSelected"/>
+        <attr name="textColorChecked"/>
+        <attr name="textColorUnable"/>
+
+        <attr name="backgroundColorNormal"/>
+        <attr name="backgroundColorPressed"/>
+        <attr name="backgroundColorSelected"/>
+        <attr name="backgroundColorChecked"/>
+        <attr name="backgroundColorUnable"/>
+
+        <attr name="backgroundDrawableNormal"/>
+        <attr name="backgroundDrawablePressed"/>
+        <attr name="backgroundDrawableSelected"/>
+        <attr name="backgroundDrawableChecked"/>
+        <attr name="backgroundDrawableUnable"/>
+
+        <attr name="cornerRadius"/>
+        <attr name="cornerRadiusTopLeft"/>
+        <attr name="cornerRadiusTopRight"/>
+        <attr name="cornerRadiusBottomLeft"/>
+        <attr name="cornerRadiusBottomRight"/>
+
+        <attr name="borderWidth"/>
+        <attr name="borderDashGap"/>
+        <attr name="borderDashWidth"/>
+
+        <attr name="borderColorNormal"/>
+        <attr name="borderColorPressed"/>
+        <attr name="borderColorSelected"/>
+        <attr name="borderColorChecked"/>
+        <attr name="borderColorUnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorEditText">
+        <attr name="textColorNormal"/>
+        <attr name="textColorPressed"/>
+        <attr name="textColorSelected"/>
+        <attr name="textColorChecked"/>
+        <attr name="textColorUnable"/>
+
+        <attr name="backgroundColorNormal"/>
+        <attr name="backgroundColorPressed"/>
+        <attr name="backgroundColorSelected"/>
+        <attr name="backgroundColorChecked"/>
+        <attr name="backgroundColorUnable"/>
+
+        <attr name="backgroundDrawableNormal"/>
+        <attr name="backgroundDrawablePressed"/>
+        <attr name="backgroundDrawableSelected"/>
+        <attr name="backgroundDrawableChecked"/>
+        <attr name="backgroundDrawableUnable"/>
+
+        <attr name="cornerRadius"/>
+        <attr name="cornerRadiusTopLeft"/>
+        <attr name="cornerRadiusTopRight"/>
+        <attr name="cornerRadiusBottomLeft"/>
+        <attr name="cornerRadiusBottomRight"/>
+
+        <attr name="borderWidth"/>
+        <attr name="borderDashGap"/>
+        <attr name="borderDashWidth"/>
+
+        <attr name="borderColorNormal"/>
+        <attr name="borderColorPressed"/>
+        <attr name="borderColorSelected"/>
+        <attr name="borderColorChecked"/>
+        <attr name="borderColorUnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorTextView">
+        <attr name="textColorNormal"/>
+        <attr name="textColorPressed"/>
+        <attr name="textColorSelected"/>
+        <attr name="textColorChecked"/>
+        <attr name="textColorUnable"/>
+
+        <attr name="backgroundColorNormal"/>
+        <attr name="backgroundColorPressed"/>
+        <attr name="backgroundColorSelected"/>
+        <attr name="backgroundColorChecked"/>
+        <attr name="backgroundColorUnable"/>
+
+        <attr name="backgroundDrawableNormal"/>
+        <attr name="backgroundDrawablePressed"/>
+        <attr name="backgroundDrawableSelected"/>
+        <attr name="backgroundDrawableChecked"/>
+        <attr name="backgroundDrawableUnable"/>
+
+        <attr name="cornerRadius"/>
+        <attr name="cornerRadiusTopLeft"/>
+        <attr name="cornerRadiusTopRight"/>
+        <attr name="cornerRadiusBottomLeft"/>
+        <attr name="cornerRadiusBottomRight"/>
+
+        <attr name="borderWidth"/>
+        <attr name="borderDashGap"/>
+        <attr name="borderDashWidth"/>
+
+        <attr name="borderColorNormal"/>
+        <attr name="borderColorPressed"/>
+        <attr name="borderColorSelected"/>
+        <attr name="borderColorChecked"/>
+        <attr name="borderColorUnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorLinearLayout">
+        <attr name="backgroundColorNormal"/>
+        <attr name="backgroundColorPressed"/>
+        <attr name="backgroundColorSelected"/>
+        <attr name="backgroundColorChecked"/>
+        <attr name="backgroundColorUnable"/>
+
+        <attr name="backgroundDrawableNormal"/>
+        <attr name="backgroundDrawablePressed"/>
+        <attr name="backgroundDrawableSelected"/>
+        <attr name="backgroundDrawableChecked"/>
+        <attr name="backgroundDrawableUnable"/>
+
+        <attr name="cornerRadius"/>
+        <attr name="cornerRadiusTopLeft"/>
+        <attr name="cornerRadiusTopRight"/>
+        <attr name="cornerRadiusBottomLeft"/>
+        <attr name="cornerRadiusBottomRight"/>
+
+        <attr name="borderWidth"/>
+        <attr name="borderDashGap"/>
+        <attr name="borderDashWidth"/>
+
+        <attr name="borderColorNormal"/>
+        <attr name="borderColorPressed"/>
+        <attr name="borderColorSelected"/>
+        <attr name="borderColorChecked"/>
+        <attr name="borderColorUnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorRelativeLayout">
+        <attr name="backgroundColorNormal"/>
+        <attr name="backgroundColorPressed"/>
+        <attr name="backgroundColorSelected"/>
+        <attr name="backgroundColorChecked"/>
+        <attr name="backgroundColorUnable"/>
+
+        <attr name="backgroundDrawableNormal"/>
+        <attr name="backgroundDrawablePressed"/>
+        <attr name="backgroundDrawableSelected"/>
+        <attr name="backgroundDrawableChecked"/>
+        <attr name="backgroundDrawableUnable"/>
+
+        <attr name="cornerRadius"/>
+        <attr name="cornerRadiusTopLeft"/>
+        <attr name="cornerRadiusTopRight"/>
+        <attr name="cornerRadiusBottomLeft"/>
+        <attr name="cornerRadiusBottomRight"/>
+
+        <attr name="borderWidth"/>
+        <attr name="borderDashGap"/>
+        <attr name="borderDashWidth"/>
+
+        <attr name="borderColorNormal"/>
+        <attr name="borderColorPressed"/>
+        <attr name="borderColorSelected"/>
+        <attr name="borderColorChecked"/>
+        <attr name="borderColorUnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorImageView">
+        <attr name="backgroundColorNormal"/>
+        <attr name="backgroundColorPressed"/>
+        <attr name="backgroundColorSelected"/>
+        <attr name="backgroundColorChecked"/>
+        <attr name="backgroundColorUnable"/>
+
+        <attr name="backgroundDrawableNormal"/>
+        <attr name="backgroundDrawablePressed"/>
+        <attr name="backgroundDrawableSelected"/>
+        <attr name="backgroundDrawableChecked"/>
+        <attr name="backgroundDrawableUnable"/>
+
+        <attr name="srcDrawableNormal"/>
+        <attr name="srcDrawablePressed"/>
+        <attr name="srcDrawableSelected"/>
+        <attr name="srcDrawableChecked"/>
+        <attr name="srcDrawableUnable"/>
+
+        <attr name="cornerRadius"/>
+        <attr name="cornerRadiusTopLeft"/>
+        <attr name="cornerRadiusTopRight"/>
+        <attr name="cornerRadiusBottomLeft"/>
+        <attr name="cornerRadiusBottomRight"/>
+
+        <attr name="borderWidth"/>
+        <attr name="borderDashGap"/>
+        <attr name="borderDashWidth"/>
+
+        <attr name="borderColorNormal"/>
+        <attr name="borderColorPressed"/>
+        <attr name="borderColorSelected"/>
+        <attr name="borderColorChecked"/>
+        <attr name="borderColorUnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorView">
+        <attr name="backgroundColorNormal"/>
+        <attr name="backgroundColorPressed"/>
+        <attr name="backgroundColorSelected"/>
+        <attr name="backgroundColorChecked"/>
+        <attr name="backgroundColorUnable"/>
+
+        <attr name="backgroundDrawableNormal"/>
+        <attr name="backgroundDrawablePressed"/>
+        <attr name="backgroundDrawableSelected"/>
+        <attr name="backgroundDrawableChecked"/>
+        <attr name="backgroundDrawableUnable"/>
+
+        <attr name="cornerRadius"/>
+        <attr name="cornerRadiusTopLeft"/>
+        <attr name="cornerRadiusTopRight"/>
+        <attr name="cornerRadiusBottomLeft"/>
+        <attr name="cornerRadiusBottomRight"/>
+
+        <attr name="borderWidth"/>
+        <attr name="borderDashGap"/>
+        <attr name="borderDashWidth"/>
+
+        <attr name="borderColorNormal"/>
+        <attr name="borderColorPressed"/>
+        <attr name="borderColorSelected"/>
+        <attr name="borderColorChecked"/>
+        <attr name="borderColorUnable"/>
+    </declare-styleable>
+
+</resources>

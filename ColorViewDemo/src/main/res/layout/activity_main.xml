@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="12dp">
+
+    <com.wei.android.lib.colorview.view.ColorTextView
+        android:id="@+id/mColorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="ColorButton"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:backgroundColorNormal="#34495e"
+        app:backgroundDrawableNormal="@drawable/n1"
+        app:backgroundDrawablePressed="@drawable/n2"
+        app:borderColorNormal="#2c3e50"
+        app:borderWidth="4dp"
+        app:cornerRadius="100dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="#16a085"
+            android:gravity="center"
+            android:onClick="bg1"
+            android:text="Background"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#27ae60"
+            android:gravity="center"
+            android:onClick="bg2"
+            android:text="Background"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#2980b9"
+            android:gravity="center"
+            android:onClick="bg3"
+            android:text="Background"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="#f39c12"
+            android:gravity="center"
+            android:onClick="bd1"
+            android:text="Border"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#d35400"
+            android:gravity="center"
+            android:onClick="bd2"
+            android:text="Border"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#c0392b"
+            android:gravity="center"
+            android:onClick="bd3"
+            android:text="Border"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bdw1"
+            android:text="BorderWidth 1px"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bdw2"
+            android:text="BorderWidth 10dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bdw3"
+            android:text="BorderWidth 20dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bddg1"
+            android:text="BorderDashGap 1px"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bddg2"
+            android:text="BorderDashGap 10dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bddg3"
+            android:text="BorderDashGap 20dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bddw1"
+            android:text="BorderDashWidth 1px"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bddw2"
+            android:text="BorderDashWidth 10dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="bddw3"
+            android:text="BorderDashWidth 20dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="cr1"
+            android:text="Corner 0dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="cr2"
+            android:text="Corner 20dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1.0"
+            android:background="#9b59b6"
+            android:gravity="center"
+            android:onClick="cr3"
+            android:text="Corner TR 50dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
