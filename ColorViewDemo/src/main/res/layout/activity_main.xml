@@ -6,277 +6,126 @@
               android:orientation="vertical"
               android:padding="12dp">
 
-    <com.wei.android.lib.colorview.view.ColorTextView
-        android:id="@+id/mColorTextView"
+    <com.wei.android.lib.colorview.view.ColorEditText
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:clickable="true"
-        android:gravity="center"
-        android:text="ColorButton"
-        android:textColor="#ffffff"
-        android:textSize="16sp"
-        app:backgroundColorNormal="#34495e"
-        app:backgroundDrawableNormal="@drawable/n1"
-        app:backgroundDrawablePressed="@drawable/n2"
-        app:borderColorNormal="#2c3e50"
-        app:borderWidth="4dp"
-        app:cornerRadius="100dp"/>
+        android:layout_height="46dp"
+        android:gravity="center_vertical"
+        android:hint="ColorEditText"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/colorAccent"
+        app:backgroundColorNormal="#eeeeee"
+        app:borderColorNormal="#dddddd"
+        app:borderWidth="1px"
+        app:cornerRadius="50dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
-        <TextView
+        <com.wei.android.lib.colorview.view.ColorTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:background="#16a085"
+            android:clickable="true"
             android:gravity="center"
-            android:onClick="bg1"
-            android:text="Background"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
+            android:text="ColorTextView"
+            android:textSize="12sp"
+            app:backgroundColorNormal="@color/colorPrimary"
+            app:backgroundColorPressed="@color/colorAccent"
+            app:borderColorNormal="@color/colorAccent"
+            app:borderColorPressed="@color/colorPrimary"
+            app:borderWidth="6dp"
+            app:cornerRadiusTopLeft="50dp"
+            app:textColorNormal="#FFFFFF"
+            app:textColorPressed="@color/colorPrimary"/>
 
-        <TextView
+        <com.wei.android.lib.colorview.view.ColorTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="6dp"
             android:layout_weight="1.0"
-            android:background="#27ae60"
+            android:clickable="true"
             android:gravity="center"
-            android:onClick="bg2"
-            android:text="Background"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
+            android:text="ColorTextView"
+            android:textSize="12sp"
+            app:backgroundColorNormal="@color/colorPrimary"
+            app:backgroundColorPressed="@color/colorAccent"
+            app:borderColorNormal="@color/colorAccent"
+            app:borderColorPressed="@color/colorPrimary"
+            app:borderWidth="6dp"
+            app:textColorNormal="#FFFFFF"
+            app:textColorPressed="@color/colorPrimary"/>
 
-        <TextView
+        <com.wei.android.lib.colorview.view.ColorTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="6dp"
             android:layout_weight="1.0"
-            android:background="#2980b9"
+            android:clickable="true"
             android:gravity="center"
-            android:onClick="bg3"
-            android:text="Background"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
+            android:text="ColorTextView"
+            android:textSize="12sp"
+            app:backgroundColorNormal="@color/colorPrimary"
+            app:backgroundColorPressed="@color/colorAccent"
+            app:borderColorNormal="@color/colorAccent"
+            app:borderColorPressed="@color/colorPrimary"
+            app:borderWidth="6dp"
+            app:cornerRadiusTopRight="50dp"
+            app:textColorNormal="#FFFFFF"
+            app:textColorPressed="@color/colorPrimary"/>
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:background="#f39c12"
-            android:gravity="center"
-            android:onClick="bd1"
-            android:text="Border"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
+        <com.wei.android.lib.colorview.view.ColorView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="36dp"
+            app:backgroundColorNormal="@color/colorAccent"
+            app:borderColorNormal="@color/colorPrimary"
+            app:borderWidth="10dp"
+            app:cornerRadius="60dp"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#d35400"
-            android:gravity="center"
-            android:onClick="bd2"
-            android:text="Border"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
+        <com.wei.android.lib.colorview.view.ColorView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="36dp"
+            app:backgroundColorNormal="@color/colorAccent"
+            app:borderColorNormal="@color/colorPrimary"
+            app:borderWidth="10dp"
+            app:cornerRadius="60dp"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#c0392b"
-            android:gravity="center"
-            android:onClick="bd3"
-            android:text="Border"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bdw1"
-            android:text="BorderWidth 1px"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
+        <com.wei.android.lib.colorview.view.ColorImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            app:backgroundDrawableNormal="@drawable/n3"
+            app:backgroundDrawablePressed="@drawable/n4"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bdw2"
-            android:text="BorderWidth 10dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bdw3"
-            android:text="BorderWidth 20dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bddg1"
-            android:text="BorderDashGap 1px"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bddg2"
-            android:text="BorderDashGap 10dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bddg3"
-            android:text="BorderDashGap 20dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bddw1"
-            android:text="BorderDashWidth 1px"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bddw2"
-            android:text="BorderDashWidth 10dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="bddw3"
-            android:text="BorderDashWidth 20dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="cr1"
-            android:text="Corner 0dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="cr2"
-            android:text="Corner 20dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1.0"
-            android:background="#9b59b6"
-            android:gravity="center"
-            android:onClick="cr3"
-            android:text="Corner TR 50dp"
-            android:textColor="#ffffff"
-            android:textSize="12sp"/>
+        <com.wei.android.lib.colorview.view.ColorImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            app:srcDrawableNormal="@drawable/n4"
+            app:srcDrawablePressed="@drawable/n3"/>
 
     </LinearLayout>
 
