@@ -75,10 +75,10 @@ ColorView
 **4. 额外笔记**
     
     1. 加粗边框时需要重新构建背景对象，否则背景边框绘制不正确。（本库不存在此问题）
-       https://issuetracker.google.com/issues/70444558
+       https://issuetracker.google.com/issues/70444558
 
     2. 当四个圆角的值不一样时，背景绘制的效果有些不准确，圆角值越大越明显。（Selector也有一样的问题）（本库存在此问题）
-       https://issuetracker.google.com/issues/70461762
+       https://issuetracker.google.com/issues/70461762
 
 **5. 版本记录**
 
