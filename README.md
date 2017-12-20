@@ -8,7 +8,7 @@ ColorView
 ![](https://github.com/uccmawei/ColorView/raw/master/demo.jpg)
 
 
-**1. Gradle 添加引用**
+**1. Gradle 添加引用（JCenter那边目前还有点问题还没能引用此版本，大家先看看就好）**
 
     compile 'com.wei.android.lib:colorview:1.2.0'
 
@@ -72,13 +72,13 @@ ColorView
 
     3. 需要更新某个属性则调用：view.getXXHelper().setXXX();
 
-**4. 已知缺陷**
+**4. 额外笔记**
     
-    1. 加粗边框时需要重新构建背景对象，否则背景边框绘制不正确。
-       https://issuetracker.google.com/issues/70444558
+    1. 加粗边框时需要重新构建背景对象，否则背景边框绘制不正确。（本库不存在此问题）
+       https://issuetracker.google.com/issues/70444558
 
-    2. 当四个圆角的值不一样时，背景绘制的效果有些不准确，圆角值越大越明显。（Selector也有一样的问题）
-       https://issuetracker.google.com/issues/70461762
+    2. 当四个圆角的值不一样时，背景绘制的效果有些不准确，圆角值越大越明显。（Selector也有一样的问题）（本库存在此问题）
+       https://issuetracker.google.com/issues/70461762
 
 **5. 版本记录**
 
