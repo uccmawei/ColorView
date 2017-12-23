@@ -1,7 +1,7 @@
 ColorView
 ========
 
-直接在布局文件中，直接设置常用5种状态的背景颜色，背景图片或者前景图片。
+抛弃Selector文件，直接在布局文件中实现，文字颜色，背景颜色，边框圆角，背景图片，前景图片的配置。
 
 ![](https://github.com/uccmawei/ColorView/raw/master/demo.jpg)
 
@@ -71,13 +71,12 @@ ColorView
     3. 需要更新某个属性则调用：view.getXXHelper().setXXX();
 
 **4. 开发笔记**
-    
-    1. 加粗边框时需要重新构建背景对象，否则背景边框绘制不正确。
-       https://issuetracker.google.com/issues/70444558
+
+[1. 加粗边框时需要重新构建背景对象，否则背景边框绘制不正确。](https://issuetracker.google.com/issues/70444558 "Google Issue")
 
 **5. 本库小瑕疵**
-    1. 当四个圆角的值不一样时，背景绘制的效果有些不准确，圆角值越大越明显，Selector也有一样的问题。
-       https://issuetracker.google.com/issues/70461762
+
+[1. 当四个圆角的值不一样时，背景绘制的效果有些不准确，圆角值越大越明显，Selector也有一样的问题。](https://issuetracker.google.com/issues/70461762 "Google Issue")
 
 **6. 版本记录**
 
