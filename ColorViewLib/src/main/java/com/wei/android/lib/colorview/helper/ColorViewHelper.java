@@ -324,17 +324,17 @@ public class ColorViewHelper<T extends View> {
         needToRecreate = updateNormal(false);
 
         mBdColorPressed = borderColor;
-        needToRecreate = needToRecreate || updatePressed(false);
+        needToRecreate = needToRecreate | updatePressed(false);
 
         mBdColorSelected = borderColor;
-        needToRecreate = needToRecreate || updateSelected(false);
+        needToRecreate = needToRecreate | updateSelected(false);
 
         mBdColorChecked = borderColor;
-        needToRecreate = needToRecreate || updateChecked(false);
+        needToRecreate = needToRecreate | updateChecked(false);
 
         if (includeUnableState) {
             mBdColorUnable = borderColor;
-            needToRecreate = needToRecreate || updateUnable(false);
+            needToRecreate = needToRecreate | updateUnable(false);
         }
 
         if (needToRecreate) {
@@ -379,8 +379,8 @@ public class ColorViewHelper<T extends View> {
 
     // SET BorderWidth & BorderDashGap & BorderDashWidth & CornerRadius
     private void updateBorderAndCornerRadius() {
-        if (updateNormal(false) || updatePressed(false) || updateSelected(false)
-                || updateChecked(false) || updateUnable(false)) {
+        if (updateNormal(false) | updatePressed(false) | updateSelected(false)
+                | updateChecked(false) | updateUnable(false)) {
             recreateViewBackgroundDrawable();
         }
     }

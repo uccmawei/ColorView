@@ -8,7 +8,7 @@ ColorView
 
 **1. Gradle 添加引用**
 
-    compile 'com.wei.android.lib:colorview:1.2.0'
+    compile 'com.wei.android.lib:colorview:1.2.1'
 
 **2. 拓展的View**
 
@@ -80,6 +80,7 @@ ColorView
 
 **6. 版本记录**
 
+**v1.2.1**　`2018.02.09`　修正代码逻辑判断
 **v1.2.0**　`2017.12.12`　发布1.2.0版本
 
 ## License ##

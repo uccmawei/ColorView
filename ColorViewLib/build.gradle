@@ -5,7 +5,7 @@ android {
     compileSdkVersion 26
 
     defaultConfig {
-        minSdkVersion 17
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -30,6 +30,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -39,7 +40,7 @@ publish {
     userOrg = 'uccmawei'
     groupId = 'com.wei.android.lib'
     artifactId = 'colorview'
-    publishVersion = '1.0.0'
-    desc = 'Encoder your selector with XML.'
+    publishVersion = '1.2.1'
+    desc = 'Encoder your colorful selector with XML.'
     website = 'https://github.com/uccmawei/ColorView'
 }
