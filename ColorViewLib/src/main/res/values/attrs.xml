@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 纯色背景 -->
+    <attr name="backgroundColorNormal" format="color" />
+    <attr name="backgroundColorPressed" format="color" />
+    <attr name="backgroundColorSelected" format="color" />
+    <attr name="backgroundColorChecked" format="color" />
+    <attr name="backgroundColorUnable" format="color" />
+
+    <!-- 资源背景 -->
+    <attr name="backgroundDrawableNormal" format="reference" />
+    <attr name="backgroundDrawablePressed" format="reference" />
+    <attr name="backgroundDrawableSelected" format="reference" />
+    <attr name="backgroundDrawableChecked" format="reference" />
+    <attr name="backgroundDrawableUnable" format="reference" />
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientOrientationNormal">
+        <enum name="T_B" value="1" />
+        <enum name="TR_BL" value="2" />
+        <enum name="R_L" value="3" />
+        <enum name="BR_TL" value="4" />
+        <enum name="B_T" value="5" />
+        <enum name="BL_TR" value="6" />
+        <enum name="L_R" value="7" />
+        <enum name="TL_BR" value="8" />
+    </attr>
+    <attr name="gradientOrientationPressed">
+        <enum name="T_B" value="1" />
+        <enum name="TR_BL" value="2" />
+        <enum name="R_L" value="3" />
+        <enum name="BR_TL" value="4" />
+        <enum name="B_T" value="5" />
+        <enum name="BL_TR" value="6" />
+        <enum name="L_R" value="7" />
+        <enum name="TL_BR" value="8" />
+    </attr>
+    <attr name="gradientOrientationSelected">
+        <enum name="T_B" value="1" />
+        <enum name="TR_BL" value="2" />
+        <enum name="R_L" value="3" />
+        <enum name="BR_TL" value="4" />
+        <enum name="B_T" value="5" />
+        <enum name="BL_TR" value="6" />
+        <enum name="L_R" value="7" />
+        <enum name="TL_BR" value="8" />
+    </attr>
+    <attr name="gradientOrientationChecked">
+        <enum name="T_B" value="1" />
+        <enum name="TR_BL" value="2" />
+        <enum name="R_L" value="3" />
+        <enum name="BR_TL" value="4" />
+        <enum name="B_T" value="5" />
+        <enum name="BL_TR" value="6" />
+        <enum name="L_R" value="7" />
+        <enum name="TL_BR" value="8" />
+    </attr>
+    <attr name="gradientOrientationUnable">
+        <enum name="T_B" value="1" />
+        <enum name="TR_BL" value="2" />
+        <enum name="R_L" value="3" />
+        <enum name="BR_TL" value="4" />
+        <enum name="B_T" value="5" />
+        <enum name="BL_TR" value="6" />
+        <enum name="L_R" value="7" />
+        <enum name="TL_BR" value="8" />
+    </attr>
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientCenterXNormal" format="float" />
+    <attr name="gradientCenterXPressed" format="float" />
+    <attr name="gradientCenterXSelected" format="float" />
+    <attr name="gradientCenterXChecked" format="float" />
+    <attr name="gradientCenterXUnable" format="float" />
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientCenterYNormal" format="float" />
+    <attr name="gradientCenterYPressed" format="float" />
+    <attr name="gradientCenterYSelected" format="float" />
+    <attr name="gradientCenterYChecked" format="float" />
+    <attr name="gradientCenterYUnable" format="float" />
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientStartColorNormal" format="color" />
+    <attr name="gradientStartColorPressed" format="color" />
+    <attr name="gradientStartColorSelected" format="color" />
+    <attr name="gradientStartColorChecked" format="color" />
+    <attr name="gradientStartColorUnable" format="color" />
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientCenterColorNormal" format="color" />
+    <attr name="gradientCenterColorPressed" format="color" />
+    <attr name="gradientCenterColorSelected" format="color" />
+    <attr name="gradientCenterColorChecked" format="color" />
+    <attr name="gradientCenterColorUnable" format="color" />
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientEndColorNormal" format="color" />
+    <attr name="gradientEndColorPressed" format="color" />
+    <attr name="gradientEndColorSelected" format="color" />
+    <attr name="gradientEndColorChecked" format="color" />
+    <attr name="gradientEndColorUnable" format="color" />
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientRadiusNormal" format="dimension" />
+    <attr name="gradientRadiusPressed" format="dimension" />
+    <attr name="gradientRadiusSelected" format="dimension" />
+    <attr name="gradientRadiusChecked" format="dimension" />
+    <attr name="gradientRadiusUnable" format="dimension" />
+
+    <!-- 渐变色背景 -->
+    <attr name="gradientTypeNormal">
+        <enum name="linear" value="1" />
+        <enum name="radial" value="2" />
+        <enum name="sweep" value="3" />
+    </attr>
+    <attr name="gradientTypePressed">
+        <enum name="linear" value="1" />
+        <enum name="radial" value="2" />
+        <enum name="sweep" value="3" />
+    </attr>
+    <attr name="gradientTypeSelected">
+        <enum name="linear" value="1" />
+        <enum name="radial" value="2" />
+        <enum name="sweep" value="3" />
+    </attr>
+    <attr name="gradientTypeChecked">
+        <enum name="linear" value="1" />
+        <enum name="radial" value="2" />
+        <enum name="sweep" value="3" />
+    </attr>
+    <attr name="gradientTypeUnable">
+        <enum name="linear" value="1" />
+        <enum name="radial" value="2" />
+        <enum name="sweep" value="3" />
+    </attr>
+
+    <!-- 文字颜色 -->
+    <attr name="textColorNormal" format="color" />
+    <attr name="textColorPressed" format="color" />
+    <attr name="textColorSelected" format="color" />
+    <attr name="textColorChecked" format="color" />
+    <attr name="textColorUnable" format="color" />
+
+    <!-- 文字颜色 -->
+    <attr name="textColorHintNormal" format="color" />
+    <attr name="textColorHintPressed" format="color" />
+    <attr name="textColorHintSelected" format="color" />
+    <attr name="textColorHintChecked" format="color" />
+    <attr name="textColorHintUnable" format="color" />
+
+    <!-- 图片资源 -->
+    <attr name="srcNormal" format="reference" />
+    <attr name="srcPressed" format="reference" />
+    <attr name="srcSelected" format="reference" />
+    <attr name="srcChecked" format="reference" />
+    <attr name="srcUnable" format="reference" />
+
+    <!-- 圆角 -->
+    <attr name="cornerRadiusNormal" format="dimension" />
+    <attr name="cornerRadiusPressed" format="dimension" />
+    <attr name="cornerRadiusSelected" format="dimension" />
+    <attr name="cornerRadiusChecked" format="dimension" />
+    <attr name="cornerRadiusUnable" format="dimension" />
+
+    <!-- 圆角 -->
+    <attr name="cornerRadiusTopLeftNormal" format="dimension" />
+    <attr name="cornerRadiusTopLeftPressed" format="dimension" />
+    <attr name="cornerRadiusTopLeftSelected" format="dimension" />
+    <attr name="cornerRadiusTopLeftChecked" format="dimension" />
+    <attr name="cornerRadiusTopLeftUnable" format="dimension" />
+
+    <!-- 圆角 -->
+    <attr name="cornerRadiusTopRightNormal" format="dimension" />
+    <attr name="cornerRadiusTopRightPressed" format="dimension" />
+    <attr name="cornerRadiusTopRightSelected" format="dimension" />
+    <attr name="cornerRadiusTopRightChecked" format="dimension" />
+    <attr name="cornerRadiusTopRightUnable" format="dimension" />
+
+    <!-- 圆角 -->
+    <attr name="cornerRadiusBottomLeftNormal" format="dimension" />
+    <attr name="cornerRadiusBottomLeftPressed" format="dimension" />
+    <attr name="cornerRadiusBottomLeftSelected" format="dimension" />
+    <attr name="cornerRadiusBottomLeftChecked" format="dimension" />
+    <attr name="cornerRadiusBottomLeftUnable" format="dimension" />
+
+    <!-- 圆角 -->
+    <attr name="cornerRadiusBottomRightNormal" format="dimension" />
+    <attr name="cornerRadiusBottomRightPressed" format="dimension" />
+    <attr name="cornerRadiusBottomRightSelected" format="dimension" />
+    <attr name="cornerRadiusBottomRightChecked" format="dimension" />
+    <attr name="cornerRadiusBottomRightUnable" format="dimension" />
+
+    <!-- 边框 -->
+    <attr name="borderWidthNormal" format="dimension" />
+    <attr name="borderWidthPressed" format="dimension" />
+    <attr name="borderWidthSelected" format="dimension" />
+    <attr name="borderWidthChecked" format="dimension" />
+    <attr name="borderWidthUnable" format="dimension" />
+
+    <!-- 边框 -->
+    <attr name="borderDashGapNormal" format="dimension" />
+    <attr name="borderDashGapPressed" format="dimension" />
+    <attr name="borderDashGapSelected" format="dimension" />
+    <attr name="borderDashGapChecked" format="dimension" />
+    <attr name="borderDashGapUnable" format="dimension" />
+
+    <!-- 边框 -->
+    <attr name="borderDashWidthNormal" format="dimension" />
+    <attr name="borderDashWidthPressed" format="dimension" />
+    <attr name="borderDashWidthSelected" format="dimension" />
+    <attr name="borderDashWidthChecked" format="dimension" />
+    <attr name="borderDashWidthUnable" format="dimension" />
+
+    <!-- 边框 -->
+    <attr name="borderColorNormal" format="color" />
+    <attr name="borderColorPressed" format="color" />
+    <attr name="borderColorSelected" format="color" />
+    <attr name="borderColorChecked" format="color" />
+    <attr name="borderColorUnable" format="color" />
+
+    <!-- 边缘图标 -->
+    <attr name="drawableLeftNormal" format="reference" />
+    <attr name="drawableLeftPressed" format="reference" />
+    <attr name="drawableLeftSelected" format="reference" />
+    <attr name="drawableLeftChecked" format="reference" />
+    <attr name="drawableLeftUnable" format="reference" />
+
+    <!-- 边缘图标 -->
+    <attr name="drawableTopNormal" format="reference" />
+    <attr name="drawableTopPressed" format="reference" />
+    <attr name="drawableTopSelected" format="reference" />
+    <attr name="drawableTopChecked" format="reference" />
+    <attr name="drawableTopUnable" format="reference" />
+
+    <!-- 边缘图标 -->
+    <attr name="drawableRightNormal" format="reference" />
+    <attr name="drawableRightPressed" format="reference" />
+    <attr name="drawableRightSelected" format="reference" />
+    <attr name="drawableRightChecked" format="reference" />
+    <attr name="drawableRightUnable" format="reference" />
+
+    <!-- 边缘图标 -->
+    <attr name="drawableBottomNormal" format="reference" />
+    <attr name="drawableBottomPressed" format="reference" />
+    <attr name="drawableBottomSelected" format="reference" />
+    <attr name="drawableBottomChecked" format="reference" />
+    <attr name="drawableBottomUnable" format="reference" />
+
+    <!-- 边缘图标大小 -->
+    <attr name="drawableLeftWidth" format="dimension" />
+    <attr name="drawableLeftHeight" format="dimension" />
+
+    <!-- 边缘图标大小 -->
+    <attr name="drawableTopWidth" format="dimension" />
+    <attr name="drawableTopHeight" format="dimension" />
+
+    <!-- 边缘图标大小 -->
+    <attr name="drawableRightWidth" format="dimension" />
+    <attr name="drawableRightHeight" format="dimension" />
+
+    <!-- 边缘图标大小 -->
+    <attr name="drawableBottomWidth" format="dimension" />
+    <attr name="drawableBottomHeight" format="dimension" />
+
+    <declare-styleable name="ColorButton">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="textColorNormal" />
+        <attr name="textColorPressed" />
+        <attr name="textColorSelected" />
+        <attr name="textColorChecked" />
+        <attr name="textColorUnable" />
+
+        <attr name="textColorHintNormal" />
+        <attr name="textColorHintPressed" />
+        <attr name="textColorHintSelected" />
+        <attr name="textColorHintChecked" />
+        <attr name="textColorHintUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+
+        <attr name="drawableLeftNormal" />
+        <attr name="drawableLeftPressed" />
+        <attr name="drawableLeftSelected" />
+        <attr name="drawableLeftChecked" />
+        <attr name="drawableLeftUnable" />
+
+        <attr name="drawableTopNormal" />
+        <attr name="drawableTopPressed" />
+        <attr name="drawableTopSelected" />
+        <attr name="drawableTopChecked" />
+        <attr name="drawableTopUnable" />
+
+        <attr name="drawableRightNormal" />
+        <attr name="drawableRightPressed" />
+        <attr name="drawableRightSelected" />
+        <attr name="drawableRightChecked" />
+        <attr name="drawableRightUnable" />
+
+        <attr name="drawableBottomNormal" />
+        <attr name="drawableBottomPressed" />
+        <attr name="drawableBottomSelected" />
+        <attr name="drawableBottomChecked" />
+        <attr name="drawableBottomUnable" />
+
+        <attr name="drawableLeftWidth" />
+        <attr name="drawableLeftHeight" />
+
+        <attr name="drawableTopWidth" />
+        <attr name="drawableTopHeight" />
+
+        <attr name="drawableRightWidth" />
+        <attr name="drawableRightHeight" />
+
+        <attr name="drawableBottomWidth" />
+        <attr name="drawableBottomHeight" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorEditText">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="textColorNormal" />
+        <attr name="textColorPressed" />
+        <attr name="textColorSelected" />
+        <attr name="textColorChecked" />
+        <attr name="textColorUnable" />
+
+        <attr name="textColorHintNormal" />
+        <attr name="textColorHintPressed" />
+        <attr name="textColorHintSelected" />
+        <attr name="textColorHintChecked" />
+        <attr name="textColorHintUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+
+        <attr name="drawableLeftNormal" />
+        <attr name="drawableLeftPressed" />
+        <attr name="drawableLeftSelected" />
+        <attr name="drawableLeftChecked" />
+        <attr name="drawableLeftUnable" />
+
+        <attr name="drawableTopNormal" />
+        <attr name="drawableTopPressed" />
+        <attr name="drawableTopSelected" />
+        <attr name="drawableTopChecked" />
+        <attr name="drawableTopUnable" />
+
+        <attr name="drawableRightNormal" />
+        <attr name="drawableRightPressed" />
+        <attr name="drawableRightSelected" />
+        <attr name="drawableRightChecked" />
+        <attr name="drawableRightUnable" />
+
+        <attr name="drawableBottomNormal" />
+        <attr name="drawableBottomPressed" />
+        <attr name="drawableBottomSelected" />
+        <attr name="drawableBottomChecked" />
+        <attr name="drawableBottomUnable" />
+
+        <attr name="drawableLeftWidth" />
+        <attr name="drawableLeftHeight" />
+
+        <attr name="drawableTopWidth" />
+        <attr name="drawableTopHeight" />
+
+        <attr name="drawableRightWidth" />
+        <attr name="drawableRightHeight" />
+
+        <attr name="drawableBottomWidth" />
+        <attr name="drawableBottomHeight" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorFrameLayout">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorTextView">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="textColorNormal" />
+        <attr name="textColorPressed" />
+        <attr name="textColorSelected" />
+        <attr name="textColorChecked" />
+        <attr name="textColorUnable" />
+
+        <attr name="textColorHintNormal" />
+        <attr name="textColorHintPressed" />
+        <attr name="textColorHintSelected" />
+        <attr name="textColorHintChecked" />
+        <attr name="textColorHintUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+
+        <attr name="drawableLeftNormal" />
+        <attr name="drawableLeftPressed" />
+        <attr name="drawableLeftSelected" />
+        <attr name="drawableLeftChecked" />
+        <attr name="drawableLeftUnable" />
+
+        <attr name="drawableTopNormal" />
+        <attr name="drawableTopPressed" />
+        <attr name="drawableTopSelected" />
+        <attr name="drawableTopChecked" />
+        <attr name="drawableTopUnable" />
+
+        <attr name="drawableRightNormal" />
+        <attr name="drawableRightPressed" />
+        <attr name="drawableRightSelected" />
+        <attr name="drawableRightChecked" />
+        <attr name="drawableRightUnable" />
+
+        <attr name="drawableBottomNormal" />
+        <attr name="drawableBottomPressed" />
+        <attr name="drawableBottomSelected" />
+        <attr name="drawableBottomChecked" />
+        <attr name="drawableBottomUnable" />
+
+        <attr name="drawableLeftWidth" />
+        <attr name="drawableLeftHeight" />
+
+        <attr name="drawableTopWidth" />
+        <attr name="drawableTopHeight" />
+
+        <attr name="drawableRightWidth" />
+        <attr name="drawableRightHeight" />
+
+        <attr name="drawableBottomWidth" />
+        <attr name="drawableBottomHeight" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorLinearLayout">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorRelativeLayout">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorImageView">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="srcNormal" />
+        <attr name="srcPressed" />
+        <attr name="srcSelected" />
+        <attr name="srcChecked" />
+        <attr name="srcUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorView">
+        <attr name="backgroundColorNormal" />
+        <attr name="backgroundColorPressed" />
+        <attr name="backgroundColorSelected" />
+        <attr name="backgroundColorChecked" />
+        <attr name="backgroundColorUnable" />
+
+        <attr name="backgroundDrawableNormal" />
+        <attr name="backgroundDrawablePressed" />
+        <attr name="backgroundDrawableSelected" />
+        <attr name="backgroundDrawableChecked" />
+        <attr name="backgroundDrawableUnable" />
+
+        <attr name="gradientOrientationNormal" />
+        <attr name="gradientOrientationPressed" />
+        <attr name="gradientOrientationSelected" />
+        <attr name="gradientOrientationChecked" />
+        <attr name="gradientOrientationUnable" />
+
+        <attr name="gradientCenterXNormal" />
+        <attr name="gradientCenterXPressed" />
+        <attr name="gradientCenterXSelected" />
+        <attr name="gradientCenterXChecked" />
+        <attr name="gradientCenterXUnable" />
+
+        <attr name="gradientCenterYNormal" />
+        <attr name="gradientCenterYPressed" />
+        <attr name="gradientCenterYSelected" />
+        <attr name="gradientCenterYChecked" />
+        <attr name="gradientCenterYUnable" />
+
+        <attr name="gradientStartColorNormal" />
+        <attr name="gradientStartColorPressed" />
+        <attr name="gradientStartColorSelected" />
+        <attr name="gradientStartColorChecked" />
+        <attr name="gradientStartColorUnable" />
+
+        <attr name="gradientCenterColorNormal" />
+        <attr name="gradientCenterColorPressed" />
+        <attr name="gradientCenterColorSelected" />
+        <attr name="gradientCenterColorChecked" />
+        <attr name="gradientCenterColorUnable" />
+
+        <attr name="gradientEndColorNormal" />
+        <attr name="gradientEndColorPressed" />
+        <attr name="gradientEndColorSelected" />
+        <attr name="gradientEndColorChecked" />
+        <attr name="gradientEndColorUnable" />
+
+        <attr name="gradientRadiusNormal" />
+        <attr name="gradientRadiusPressed" />
+        <attr name="gradientRadiusSelected" />
+        <attr name="gradientRadiusChecked" />
+        <attr name="gradientRadiusUnable" />
+
+        <attr name="gradientTypeNormal" />
+        <attr name="gradientTypePressed" />
+        <attr name="gradientTypeSelected" />
+        <attr name="gradientTypeChecked" />
+        <attr name="gradientTypeUnable" />
+
+        <attr name="cornerRadiusNormal" />
+        <attr name="cornerRadiusPressed" />
+        <attr name="cornerRadiusSelected" />
+        <attr name="cornerRadiusChecked" />
+        <attr name="cornerRadiusUnable" />
+
+        <attr name="cornerRadiusTopLeftNormal" />
+        <attr name="cornerRadiusTopLeftPressed" />
+        <attr name="cornerRadiusTopLeftSelected" />
+        <attr name="cornerRadiusTopLeftChecked" />
+        <attr name="cornerRadiusTopLeftUnable" />
+
+        <attr name="cornerRadiusTopRightNormal" />
+        <attr name="cornerRadiusTopRightPressed" />
+        <attr name="cornerRadiusTopRightSelected" />
+        <attr name="cornerRadiusTopRightChecked" />
+        <attr name="cornerRadiusTopRightUnable" />
+
+        <attr name="cornerRadiusBottomLeftNormal" />
+        <attr name="cornerRadiusBottomLeftPressed" />
+        <attr name="cornerRadiusBottomLeftSelected" />
+        <attr name="cornerRadiusBottomLeftChecked" />
+        <attr name="cornerRadiusBottomLeftUnable" />
+
+        <attr name="cornerRadiusBottomRightNormal" />
+        <attr name="cornerRadiusBottomRightPressed" />
+        <attr name="cornerRadiusBottomRightSelected" />
+        <attr name="cornerRadiusBottomRightChecked" />
+        <attr name="cornerRadiusBottomRightUnable" />
+
+        <attr name="borderWidthNormal" />
+        <attr name="borderWidthPressed" />
+        <attr name="borderWidthSelected" />
+        <attr name="borderWidthChecked" />
+        <attr name="borderWidthUnable" />
+
+        <attr name="borderDashGapNormal" />
+        <attr name="borderDashGapPressed" />
+        <attr name="borderDashGapSelected" />
+        <attr name="borderDashGapChecked" />
+        <attr name="borderDashGapUnable" />
+
+        <attr name="borderDashWidthNormal" />
+        <attr name="borderDashWidthPressed" />
+        <attr name="borderDashWidthSelected" />
+        <attr name="borderDashWidthChecked" />
+        <attr name="borderDashWidthUnable" />
+
+        <attr name="borderColorNormal" />
+        <attr name="borderColorPressed" />
+        <attr name="borderColorSelected" />
+        <attr name="borderColorChecked" />
+        <attr name="borderColorUnable" />
+    </declare-styleable>
+
+</resources>
