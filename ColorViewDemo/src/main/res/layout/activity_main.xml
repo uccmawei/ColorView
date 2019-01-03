@@ -11,12 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:stateListAnimator="@null"
         android:text="Color_Button"
+        app:backgroundTintPressed="#33FF0000"
         app:cornerRadiusBottomRightNormal="30dp"
         app:cornerRadiusTopLeftNormal="30dp"
         app:gradientEndColorNormal="@color/colorAccent"
         app:gradientOrientationNormal="L_R"
-        app:gradientOrientationPressed="R_L"
         app:gradientStartColorNormal="@color/colorPrimary"
         app:gradientTypeNormal="linear"
         app:textColorNormal="#FFFFFF" />
@@ -32,6 +33,7 @@
         android:paddingRight="16dp"
         android:textSize="14sp"
         app:backgroundColorNormal="#FFFFFF"
+        app:backgroundTintPressed="#33FF0000"
         app:borderColorNormal="@color/colorAccent"
         app:borderWidthNormal="1px"
         app:cornerRadiusNormal="30dp"
@@ -47,6 +49,7 @@
         android:clickable="true"
         app:backgroundColorNormal="#FFFFFF"
         app:backgroundColorPressed="#F2F4F7"
+        app:backgroundTintPressed="#33FF0000"
         app:cornerRadiusNormal="10dp">
 
         <com.wei.android.lib.colorview.view.ColorTextView
@@ -77,6 +80,7 @@
         android:orientation="horizontal"
         app:backgroundColorNormal="#FFFFFF"
         app:backgroundColorPressed="#F2F4F7"
+        app:backgroundTintPressed="#33FF0000"
         app:borderColorNormal="@color/colorPrimary"
         app:borderDashGapNormal="3dp"
         app:borderDashWidthNormal="5dp"

@@ -164,7 +164,9 @@ public class ColorFrameLayout extends FrameLayout {
                 R.styleable.ColorFrameLayout_borderColorPressed,
                 R.styleable.ColorFrameLayout_borderColorSelected,
                 R.styleable.ColorFrameLayout_borderColorChecked,
-                R.styleable.ColorFrameLayout_borderColorUnable);
+                R.styleable.ColorFrameLayout_borderColorUnable,
+
+                R.styleable.ColorFrameLayout_backgroundTintPressed);
 
         typedArray.recycle();
     }

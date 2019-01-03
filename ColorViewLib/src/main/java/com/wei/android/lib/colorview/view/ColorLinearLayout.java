@@ -163,7 +163,9 @@ public class ColorLinearLayout extends LinearLayout {
                 R.styleable.ColorLinearLayout_borderColorPressed,
                 R.styleable.ColorLinearLayout_borderColorSelected,
                 R.styleable.ColorLinearLayout_borderColorChecked,
-                R.styleable.ColorLinearLayout_borderColorUnable);
+                R.styleable.ColorLinearLayout_borderColorUnable,
+
+                R.styleable.ColorLinearLayout_backgroundTintPressed);
 
         typedArray.recycle();
     }

@@ -2,12 +2,15 @@ package com.wei.android.lib.colorview.helper;
 
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.view.View;
 
 import com.wei.android.lib.colorview.utils.Constant;
+
+import androidx.core.graphics.drawable.DrawableCompat;
 
 /**
  * Created by UCCMAWEI on 2017/11/17.
@@ -148,6 +151,10 @@ public class ColorViewHelper<T extends View> {
     private int mBorderColorChecked;
     private int mBorderColorUnable;
 
+    // 点击背景着色
+    private boolean mHasBackgroundColorTintPressed;
+    private int mBackgroundColorTintPressed;
+
     // 目标View
     protected T mView;
 
@@ -266,7 +273,9 @@ public class ColorViewHelper<T extends View> {
                            int borderColorPressed,
                            int borderColorSelected,
                            int borderColorChecked,
-                           int borderColorUnable) {
+                           int borderColorUnable,
+
+                           int backgroundColorTintPressed) {
 
         mView = view;
 
@@ -390,6 +399,9 @@ public class ColorViewHelper<T extends View> {
         mBorderColorChecked = typedArray.getColor(borderColorChecked, mBorderColorNormal);
         mBorderColorUnable = typedArray.getColor(borderColorUnable, mBorderColorNormal);
 
+        mHasBackgroundColorTintPressed = typedArray.hasValue(backgroundColorTintPressed);
+        mBackgroundColorTintPressed = typedArray.getColor(backgroundColorTintPressed, Color.TRANSPARENT);
+
         // 图片模式
         boolean isBackgroundColorMode = mBackgroundDrawableNormal == null;
         if (mBackgroundDrawableNormal == null) {
@@ -416,6 +428,8 @@ public class ColorViewHelper<T extends View> {
             updateCheckedColor();
             updateUnableColor();
         }
+
+        updatePressedTint();
 
         // 生成背景
         recreateViewBackgroundDrawable();
@@ -470,6 +484,13 @@ public class ColorViewHelper<T extends View> {
                 mCornerRadiusTopLeftUnable, mCornerRadiusTopRightUnable,
                 mCornerRadiusBottomLeftUnable, mCornerRadiusBottomRightUnable,
                 mBorderWidthUnable, mBorderDashWidthUnable, mBorderDashGapUnable, mBorderColorUnable);
+    }
+
+    private void updatePressedTint() {
+        if (mHasBackgroundColorTintPressed) {
+            DrawableCompat.setTint(mBackgroundDrawablePressed, mBackgroundColorTintPressed);
+            DrawableCompat.setTintMode(mBackgroundDrawablePressed, PorterDuff.Mode.SRC_ATOP);
+        }
     }
 
     // 刷新本视图的背景
@@ -649,6 +670,7 @@ public class ColorViewHelper<T extends View> {
         if (backgroundDrawablePressed != null) {
             if (mBackgroundDrawablePressed != backgroundDrawablePressed) {
                 mBackgroundDrawablePressed = backgroundDrawablePressed;
+                updatePressedTint();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1880,6 +1902,19 @@ public class ColorViewHelper<T extends View> {
                 updateUnableColor();
                 recreateViewBackgroundDrawable();
             }
+        }
+    }
+
+    public int getBackgroundColorTintPressed() {
+        return mBackgroundColorTintPressed;
+    }
+
+    public void setBackgroundColorTintPressed(int backgroundColorTintPressed) {
+        if (mBackgroundColorTintPressed != backgroundColorTintPressed) {
+            mBackgroundColorTintPressed = backgroundColorTintPressed;
+            mHasBackgroundColorTintPressed = true;
+            updatePressedTint();
+            recreateViewBackgroundDrawable();
         }
     }
 }

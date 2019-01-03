@@ -162,7 +162,9 @@ public class ColorView extends View {
                 R.styleable.ColorView_borderColorPressed,
                 R.styleable.ColorView_borderColorSelected,
                 R.styleable.ColorView_borderColorChecked,
-                R.styleable.ColorView_borderColorUnable);
+                R.styleable.ColorView_borderColorUnable,
+
+                R.styleable.ColorView_backgroundTintPressed);
 
         typedArray.recycle();
     }

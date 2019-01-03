@@ -141,7 +141,9 @@ public class ColorImageViewHelper extends ColorViewHelper<ImageView> {
                                 int borderColorPressed,
                                 int borderColorSelected,
                                 int borderColorChecked,
-                                int borderColorUnable) {
+                                int borderColorUnable,
+
+                                int backgroundColorTintPressed) {
 
         super(imageView,
                 typedArray,
@@ -258,7 +260,9 @@ public class ColorImageViewHelper extends ColorViewHelper<ImageView> {
                 borderColorPressed,
                 borderColorSelected,
                 borderColorChecked,
-                borderColorUnable);
+                borderColorUnable,
+
+                backgroundColorTintPressed);
 
         mSrcNormal = typedArray.getDrawable(srcNormal);
         mSrcPressed = typedArray.getDrawable(srcPressed);

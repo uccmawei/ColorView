@@ -204,7 +204,9 @@ public class ColorEditText extends AppCompatEditText {
                 R.styleable.ColorEditText_drawableRightHeight,
 
                 R.styleable.ColorEditText_drawableBottomWidth,
-                R.styleable.ColorEditText_drawableBottomHeight);
+                R.styleable.ColorEditText_drawableBottomHeight,
+
+                R.styleable.ColorEditText_backgroundTintPressed);
 
         typedArray.recycle();
     }

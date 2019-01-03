@@ -163,7 +163,9 @@ public class ColorRelativeLayout extends RelativeLayout {
                 R.styleable.ColorRelativeLayout_borderColorPressed,
                 R.styleable.ColorRelativeLayout_borderColorSelected,
                 R.styleable.ColorRelativeLayout_borderColorChecked,
-                R.styleable.ColorRelativeLayout_borderColorUnable);
+                R.styleable.ColorRelativeLayout_borderColorUnable,
+
+                R.styleable.ColorRelativeLayout_backgroundTintPressed);
 
         typedArray.recycle();
     }

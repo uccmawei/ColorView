@@ -204,7 +204,9 @@ public class ColorTextView extends AppCompatTextView {
                 R.styleable.ColorTextView_drawableRightHeight,
 
                 R.styleable.ColorTextView_drawableBottomWidth,
-                R.styleable.ColorTextView_drawableBottomHeight);
+                R.styleable.ColorTextView_drawableBottomHeight,
+
+                R.styleable.ColorTextView_backgroundTintPressed);
 
         typedArray.recycle();
     }

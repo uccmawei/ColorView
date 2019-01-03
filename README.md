@@ -8,7 +8,7 @@ ColorView
 
 **1. Gradle 添加引用**
 
-    compile 'com.wei.android.lib:colorview:1.3.0'
+    compile 'com.wei.android.lib:colorview:1.3.1'
 
 **2. 拓展的View**
 
@@ -61,6 +61,8 @@ ColorView
     app:drawableBottomWidth="20dp"                      // 下边图标宽度
     app:drawableBottomHeight="20dp"                     // 下边图标高度
 
+    app:backgroundTintPressed="#33FF0000"               // 点击时背景遮罩层，仅支持5.0及以上系统
+
 **3. 属性介绍**
 
     1. Normal属性具有默认性，其他属性的默认值都跟Normal保持一致。
@@ -79,11 +81,13 @@ ColorView
 
 **6. 版本记录**
 
-**v1.3.0**　`2018.12.28`　支持更多属性字段，细化更多状态属性
+**v1.3.1**　`2019.01.03`　支持点击背景添加遮罩层效果。
 
-**v1.2.1**　`2018.02.09`　修正代码逻辑判断
+**v1.3.0**　`2018.12.28`　支持更多属性字段，细化更多状态属性。
 
-**v1.2.0**　`2017.12.12`　发布1.2.0版本
+**v1.2.1**　`2018.02.09`　修正代码逻辑判断。
+
+**v1.2.0**　`2017.12.12`　发布1.2.0版本。
 
 ## License ##
 

@@ -264,6 +264,9 @@
     <attr name="drawableBottomWidth" format="dimension" />
     <attr name="drawableBottomHeight" format="dimension" />
 
+    <!-- 点击背景着色 -->
+    <attr name="backgroundTintPressed" format="color" />
+
     <declare-styleable name="ColorButton">
         <attr name="backgroundColorNormal" />
         <attr name="backgroundColorPressed" />
@@ -426,6 +429,8 @@
 
         <attr name="drawableBottomWidth" />
         <attr name="drawableBottomHeight" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
     <declare-styleable name="ColorEditText">
@@ -590,6 +595,8 @@
 
         <attr name="drawableBottomWidth" />
         <attr name="drawableBottomHeight" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
     <declare-styleable name="ColorFrameLayout">
@@ -706,6 +713,8 @@
         <attr name="borderColorSelected" />
         <attr name="borderColorChecked" />
         <attr name="borderColorUnable" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
     <declare-styleable name="ColorTextView">
@@ -870,6 +879,8 @@
 
         <attr name="drawableBottomWidth" />
         <attr name="drawableBottomHeight" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
     <declare-styleable name="ColorLinearLayout">
@@ -986,6 +997,8 @@
         <attr name="borderColorSelected" />
         <attr name="borderColorChecked" />
         <attr name="borderColorUnable" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
     <declare-styleable name="ColorRelativeLayout">
@@ -1102,6 +1115,8 @@
         <attr name="borderColorSelected" />
         <attr name="borderColorChecked" />
         <attr name="borderColorUnable" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
     <declare-styleable name="ColorImageView">
@@ -1224,6 +1239,8 @@
         <attr name="borderColorSelected" />
         <attr name="borderColorChecked" />
         <attr name="borderColorUnable" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
     <declare-styleable name="ColorView">
@@ -1340,6 +1357,8 @@
         <attr name="borderColorSelected" />
         <attr name="borderColorChecked" />
         <attr name="borderColorUnable" />
+
+        <attr name="backgroundTintPressed" />
     </declare-styleable>
 
 </resources>

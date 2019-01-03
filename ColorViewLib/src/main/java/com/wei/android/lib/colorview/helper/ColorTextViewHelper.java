@@ -196,7 +196,9 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
                                int drawableRightHeight,
 
                                int drawableBottomWidth,
-                               int drawableBottomHeight) {
+                               int drawableBottomHeight,
+
+                               int backgroundColorTintPressed) {
 
         super(textView,
                 typedArray,
@@ -313,7 +315,9 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
                 borderColorPressed,
                 borderColorSelected,
                 borderColorChecked,
-                borderColorUnable);
+                borderColorUnable,
+
+                backgroundColorTintPressed);
 
         mTextColorNormal = typedArray.getColor(textColorNormal, currentTextColor);
         mTextColorPressed = typedArray.getColor(textColorPressed, mTextColorNormal);

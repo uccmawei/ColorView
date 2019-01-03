@@ -204,7 +204,9 @@ public class ColorButton extends AppCompatButton {
                 R.styleable.ColorButton_drawableRightHeight,
 
                 R.styleable.ColorButton_drawableBottomWidth,
-                R.styleable.ColorButton_drawableBottomHeight);
+                R.styleable.ColorButton_drawableBottomHeight,
+
+                R.styleable.ColorButton_backgroundTintPressed);
 
         typedArray.recycle();
     }

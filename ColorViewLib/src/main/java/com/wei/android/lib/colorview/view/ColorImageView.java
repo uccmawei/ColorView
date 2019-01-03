@@ -160,7 +160,9 @@ public class ColorImageView extends AppCompatImageView {
                 R.styleable.ColorImageView_borderColorPressed,
                 R.styleable.ColorImageView_borderColorSelected,
                 R.styleable.ColorImageView_borderColorChecked,
-                R.styleable.ColorImageView_borderColorUnable);
+                R.styleable.ColorImageView_borderColorUnable,
+
+                R.styleable.ColorImageView_backgroundTintPressed);
 
         typedArray.recycle();
     }
