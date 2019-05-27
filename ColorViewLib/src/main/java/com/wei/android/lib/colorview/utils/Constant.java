@@ -17,6 +17,14 @@ public class Constant {
     public static final int[] STATE_5_NONE = {};
 
     // 整个库支持的五种状态
+    public static final int STATE_INDEX_COUNT = 5;
+    public static final int STATE_INDEX_NORMAL = 0;
+    public static final int STATE_INDEX_PRESSED = 1;
+    public static final int STATE_INDEX_SELECTED = 2;
+    public static final int STATE_INDEX_CHECKED = 3;
+    public static final int STATE_INDEX_UNABLE = 4;
+
+    // 整个库支持的五种状态
     public static final int[][] STATE_ARRAY = {STATE_0_UNABLE, STATE_1_PRESSED, STATE_2_SELECTED, STATE_3_CHECKED, STATE_4_ENABLED, STATE_5_NONE};
 
     // 渐变支持八个方向

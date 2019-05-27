@@ -8,9 +8,9 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.view.View;
 
-import com.wei.android.lib.colorview.utils.Constant;
-
 import androidx.core.graphics.drawable.DrawableCompat;
+
+import com.wei.android.lib.colorview.utils.Constant;
 
 /**
  * Created by UCCMAWEI on 2017/11/17.
@@ -31,6 +31,7 @@ public class ColorViewHelper<T extends View> {
     private Drawable mBackgroundDrawableSelected;
     private Drawable mBackgroundDrawableChecked;
     private Drawable mBackgroundDrawableUnable;
+    private boolean[] mBackgroundDrawableExistArray = new boolean[Constant.STATE_INDEX_COUNT];
 
     // 渐变色背景
     private int mGradientOrientationNormal;
@@ -285,11 +286,30 @@ public class ColorViewHelper<T extends View> {
         mBackgroundColorChecked = typedArray.getColor(backgroundColorChecked, mBackgroundColorNormal);
         mBackgroundColorUnable = typedArray.getColor(backgroundColorUnable, mBackgroundColorNormal);
 
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_NORMAL] = typedArray.hasValue(backgroundDrawableNormal);
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_PRESSED] = typedArray.hasValue(backgroundDrawablePressed);
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_SELECTED] = typedArray.hasValue(backgroundDrawableSelected);
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_CHECKED] = typedArray.hasValue(backgroundDrawableChecked);
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_UNABLE] = typedArray.hasValue(backgroundDrawableUnable);
         mBackgroundDrawableNormal = typedArray.getDrawable(backgroundDrawableNormal);
         mBackgroundDrawablePressed = typedArray.getDrawable(backgroundDrawablePressed);
         mBackgroundDrawableSelected = typedArray.getDrawable(backgroundDrawableSelected);
         mBackgroundDrawableChecked = typedArray.getDrawable(backgroundDrawableChecked);
         mBackgroundDrawableUnable = typedArray.getDrawable(backgroundDrawableUnable);
+        if (mBackgroundDrawableNormal != null) {
+            if (mBackgroundDrawablePressed == null) {
+                mBackgroundDrawablePressed = typedArray.getDrawable(backgroundDrawableNormal);
+            }
+            if (mBackgroundDrawableSelected == null) {
+                mBackgroundDrawableSelected = typedArray.getDrawable(backgroundDrawableNormal);
+            }
+            if (mBackgroundDrawableChecked == null) {
+                mBackgroundDrawableChecked = typedArray.getDrawable(backgroundDrawableNormal);
+            }
+            if (mBackgroundDrawableUnable == null) {
+                mBackgroundDrawableUnable = typedArray.getDrawable(backgroundDrawableNormal);
+            }
+        }
 
         mGradientOrientationNormal = typedArray.getInt(gradientOrientationNormal, Constant.GRADIENT_ORIENTATION_L_R);
         mGradientOrientationPressed = typedArray.getInt(gradientOrientationPressed, mGradientOrientationNormal);
@@ -402,33 +422,11 @@ public class ColorViewHelper<T extends View> {
         mHasBackgroundColorTintPressed = typedArray.hasValue(backgroundColorTintPressed);
         mBackgroundColorTintPressed = typedArray.getColor(backgroundColorTintPressed, Color.TRANSPARENT);
 
-        // 图片模式
-        boolean isBackgroundColorMode = mBackgroundDrawableNormal == null;
-        if (mBackgroundDrawableNormal == null) {
-            mBackgroundDrawableNormal = new GradientDrawable();
-        }
-        if (mBackgroundDrawablePressed == null) {
-            mBackgroundDrawablePressed = isBackgroundColorMode ? new GradientDrawable() : typedArray.getDrawable(backgroundDrawableNormal);
-        }
-        if (mBackgroundDrawableSelected == null) {
-            mBackgroundDrawableSelected = isBackgroundColorMode ? new GradientDrawable() : typedArray.getDrawable(backgroundDrawableNormal);
-        }
-        if (mBackgroundDrawableChecked == null) {
-            mBackgroundDrawableChecked = isBackgroundColorMode ? new GradientDrawable() : typedArray.getDrawable(backgroundDrawableNormal);
-        }
-        if (mBackgroundDrawableUnable == null) {
-            mBackgroundDrawableUnable = isBackgroundColorMode ? new GradientDrawable() : typedArray.getDrawable(backgroundDrawableNormal);
-        }
-
-        // 颜色模式
-        if (isBackgroundColorMode) {
-            updateNormalColor();
-            updatePressedColor();
-            updateSelectedColor();
-            updateCheckedColor();
-            updateUnableColor();
-        }
-
+        updateNormalDrawable();
+        updatePressedDrawable();
+        updateSelectedDrawable();
+        updateCheckedDrawable();
+        updateUnableDrawable();
         updatePressedTint();
 
         // 生成背景
@@ -436,54 +434,84 @@ public class ColorViewHelper<T extends View> {
     }
 
     // 更新对应状态的背景
-    private void updateNormalColor() {
-        mBackgroundDrawableNormal = createDrawable(mBackgroundColorNormal,
-                mGradientOrientationNormal, mGradientCenterXNormal, mGradientCenterYNormal,
-                mGradientStartColorNormal, mHasGradientCenterColorNormal, mGradientCenterColorNormal, mGradientEndColorNormal,
-                mGradientRadiusNormal, mGradientTypeNormal,
-                mCornerRadiusTopLeftNormal, mCornerRadiusTopRightNormal,
-                mCornerRadiusBottomLeftNormal, mCornerRadiusBottomRightNormal,
-                mBorderWidthNormal, mBorderDashWidthNormal, mBorderDashGapNormal, mBorderColorNormal);
+    private void updateNormalDrawable() {
+        if (mBackgroundDrawableExistArray[Constant.STATE_INDEX_NORMAL]) {
+            if (mBackgroundDrawableNormal == null) {
+                mBackgroundDrawableNormal = new GradientDrawable();
+            }
+        } else {
+            mBackgroundDrawableNormal = createDrawable(mBackgroundColorNormal,
+                    mGradientOrientationNormal, mGradientCenterXNormal, mGradientCenterYNormal,
+                    mGradientStartColorNormal, mHasGradientCenterColorNormal, mGradientCenterColorNormal, mGradientEndColorNormal,
+                    mGradientRadiusNormal, mGradientTypeNormal,
+                    mCornerRadiusTopLeftNormal, mCornerRadiusTopRightNormal,
+                    mCornerRadiusBottomLeftNormal, mCornerRadiusBottomRightNormal,
+                    mBorderWidthNormal, mBorderDashWidthNormal, mBorderDashGapNormal, mBorderColorNormal);
+        }
     }
 
-    private void updatePressedColor() {
-        mBackgroundDrawablePressed = createDrawable(mBackgroundColorPressed,
-                mGradientOrientationPressed, mGradientCenterXPressed, mGradientCenterYPressed,
-                mGradientStartColorPressed, mHasGradientCenterColorPressed, mGradientCenterColorPressed, mGradientEndColorPressed,
-                mGradientRadiusPressed, mGradientTypePressed,
-                mCornerRadiusTopLeftPressed, mCornerRadiusTopRightPressed,
-                mCornerRadiusBottomLeftPressed, mCornerRadiusBottomRightPressed,
-                mBorderWidthPressed, mBorderDashWidthPressed, mBorderDashGapPressed, mBorderColorPressed);
+    private void updatePressedDrawable() {
+        if (mBackgroundDrawableExistArray[Constant.STATE_INDEX_PRESSED]) {
+            if (mBackgroundDrawablePressed == null) {
+                mBackgroundDrawablePressed = new GradientDrawable();
+            }
+        } else {
+            mBackgroundDrawablePressed = createDrawable(mBackgroundColorPressed,
+                    mGradientOrientationPressed, mGradientCenterXPressed, mGradientCenterYPressed,
+                    mGradientStartColorPressed, mHasGradientCenterColorPressed, mGradientCenterColorPressed, mGradientEndColorPressed,
+                    mGradientRadiusPressed, mGradientTypePressed,
+                    mCornerRadiusTopLeftPressed, mCornerRadiusTopRightPressed,
+                    mCornerRadiusBottomLeftPressed, mCornerRadiusBottomRightPressed,
+                    mBorderWidthPressed, mBorderDashWidthPressed, mBorderDashGapPressed, mBorderColorPressed);
+        }
     }
 
-    private void updateSelectedColor() {
-        mBackgroundDrawableSelected = createDrawable(mBackgroundColorSelected,
-                mGradientOrientationSelected, mGradientCenterXSelected, mGradientCenterYSelected,
-                mGradientStartColorSelected, mHasGradientCenterColorSelected, mGradientCenterColorSelected, mGradientEndColorSelected,
-                mGradientRadiusSelected, mGradientTypeSelected,
-                mCornerRadiusTopLeftSelected, mCornerRadiusTopRightSelected,
-                mCornerRadiusBottomLeftSelected, mCornerRadiusBottomRightSelected,
-                mBorderWidthSelected, mBorderDashWidthSelected, mBorderDashGapSelected, mBorderColorSelected);
+    private void updateSelectedDrawable() {
+        if (mBackgroundDrawableExistArray[Constant.STATE_INDEX_SELECTED]) {
+            if (mBackgroundDrawableSelected == null) {
+                mBackgroundDrawableSelected = new GradientDrawable();
+            }
+        } else {
+            mBackgroundDrawableSelected = createDrawable(mBackgroundColorSelected,
+                    mGradientOrientationSelected, mGradientCenterXSelected, mGradientCenterYSelected,
+                    mGradientStartColorSelected, mHasGradientCenterColorSelected, mGradientCenterColorSelected, mGradientEndColorSelected,
+                    mGradientRadiusSelected, mGradientTypeSelected,
+                    mCornerRadiusTopLeftSelected, mCornerRadiusTopRightSelected,
+                    mCornerRadiusBottomLeftSelected, mCornerRadiusBottomRightSelected,
+                    mBorderWidthSelected, mBorderDashWidthSelected, mBorderDashGapSelected, mBorderColorSelected);
+        }
     }
 
-    private void updateCheckedColor() {
-        mBackgroundDrawableChecked = createDrawable(mBackgroundColorChecked,
-                mGradientOrientationChecked, mGradientCenterXChecked, mGradientCenterYChecked,
-                mGradientStartColorChecked, mHasGradientCenterColorChecked, mGradientCenterColorChecked, mGradientEndColorChecked,
-                mGradientRadiusChecked, mGradientTypeChecked,
-                mCornerRadiusTopLeftChecked, mCornerRadiusTopRightChecked,
-                mCornerRadiusBottomLeftChecked, mCornerRadiusBottomRightChecked,
-                mBorderWidthChecked, mBorderDashWidthChecked, mBorderDashGapChecked, mBorderColorChecked);
+    private void updateCheckedDrawable() {
+        if (mBackgroundDrawableExistArray[Constant.STATE_INDEX_CHECKED]) {
+            if (mBackgroundDrawableChecked == null) {
+                mBackgroundDrawableChecked = new GradientDrawable();
+            }
+        } else {
+            mBackgroundDrawableChecked = createDrawable(mBackgroundColorChecked,
+                    mGradientOrientationChecked, mGradientCenterXChecked, mGradientCenterYChecked,
+                    mGradientStartColorChecked, mHasGradientCenterColorChecked, mGradientCenterColorChecked, mGradientEndColorChecked,
+                    mGradientRadiusChecked, mGradientTypeChecked,
+                    mCornerRadiusTopLeftChecked, mCornerRadiusTopRightChecked,
+                    mCornerRadiusBottomLeftChecked, mCornerRadiusBottomRightChecked,
+                    mBorderWidthChecked, mBorderDashWidthChecked, mBorderDashGapChecked, mBorderColorChecked);
+        }
     }
 
-    private void updateUnableColor() {
-        mBackgroundDrawableUnable = createDrawable(mBackgroundColorUnable,
-                mGradientOrientationUnable, mGradientCenterXUnable, mGradientCenterYUnable,
-                mGradientStartColorUnable, mHasGradientCenterColorUnable, mGradientCenterColorUnable, mGradientEndColorUnable,
-                mGradientRadiusUnable, mGradientTypeUnable,
-                mCornerRadiusTopLeftUnable, mCornerRadiusTopRightUnable,
-                mCornerRadiusBottomLeftUnable, mCornerRadiusBottomRightUnable,
-                mBorderWidthUnable, mBorderDashWidthUnable, mBorderDashGapUnable, mBorderColorUnable);
+    private void updateUnableDrawable() {
+        if (mBackgroundDrawableExistArray[Constant.STATE_INDEX_UNABLE]) {
+            if (mBackgroundDrawableUnable == null) {
+                mBackgroundDrawableUnable = new GradientDrawable();
+            }
+        } else {
+            mBackgroundDrawableUnable = createDrawable(mBackgroundColorUnable,
+                    mGradientOrientationUnable, mGradientCenterXUnable, mGradientCenterYUnable,
+                    mGradientStartColorUnable, mHasGradientCenterColorUnable, mGradientCenterColorUnable, mGradientEndColorUnable,
+                    mGradientRadiusUnable, mGradientTypeUnable,
+                    mCornerRadiusTopLeftUnable, mCornerRadiusTopRightUnable,
+                    mCornerRadiusBottomLeftUnable, mCornerRadiusBottomRightUnable,
+                    mBorderWidthUnable, mBorderDashWidthUnable, mBorderDashGapUnable, mBorderColorUnable);
+        }
     }
 
     private void updatePressedTint() {
@@ -594,9 +622,10 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundColorNormal(int backgroundColorNormal) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_NORMAL] = false;
         if (mBackgroundColorNormal != backgroundColorNormal) {
             mBackgroundColorNormal = backgroundColorNormal;
-            updateNormalColor();
+            updateNormalDrawable();
             recreateViewBackgroundDrawable();
         }
     }
@@ -606,9 +635,10 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundColorPressed(int backgroundColorPressed) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_PRESSED] = false;
         if (mBackgroundColorPressed != backgroundColorPressed) {
             mBackgroundColorPressed = backgroundColorPressed;
-            updatePressedColor();
+            updatePressedDrawable();
             recreateViewBackgroundDrawable();
         }
     }
@@ -618,9 +648,10 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundColorSelected(int backgroundColorSelected) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_SELECTED] = false;
         if (mBackgroundColorSelected != backgroundColorSelected) {
             mBackgroundColorSelected = backgroundColorSelected;
-            updateSelectedColor();
+            updateSelectedDrawable();
             recreateViewBackgroundDrawable();
         }
     }
@@ -630,9 +661,10 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundColorChecked(int backgroundColorChecked) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_CHECKED] = false;
         if (mBackgroundColorChecked != backgroundColorChecked) {
             mBackgroundColorChecked = backgroundColorChecked;
-            updateCheckedColor();
+            updateCheckedDrawable();
             recreateViewBackgroundDrawable();
         }
     }
@@ -642,9 +674,10 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundColorUnable(int backgroundColorUnable) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_UNABLE] = false;
         if (mBackgroundColorUnable != backgroundColorUnable) {
             mBackgroundColorUnable = backgroundColorUnable;
-            updateUnableColor();
+            updateUnableDrawable();
             recreateViewBackgroundDrawable();
         }
     }
@@ -654,6 +687,7 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundDrawableNormal(Drawable backgroundDrawableNormal) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_NORMAL] = true;
         if (backgroundDrawableNormal != null) {
             if (mBackgroundDrawableNormal != backgroundDrawableNormal) {
                 mBackgroundDrawableNormal = backgroundDrawableNormal;
@@ -667,6 +701,7 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundDrawablePressed(Drawable backgroundDrawablePressed) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_PRESSED] = true;
         if (backgroundDrawablePressed != null) {
             if (mBackgroundDrawablePressed != backgroundDrawablePressed) {
                 mBackgroundDrawablePressed = backgroundDrawablePressed;
@@ -681,6 +716,7 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundDrawableSelected(Drawable backgroundDrawableSelected) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_SELECTED] = true;
         if (backgroundDrawableSelected != null) {
             if (mBackgroundDrawableSelected != backgroundDrawableSelected) {
                 mBackgroundDrawableSelected = backgroundDrawableSelected;
@@ -694,6 +730,7 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundDrawableChecked(Drawable backgroundDrawableChecked) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_CHECKED] = true;
         if (backgroundDrawableChecked != null) {
             if (mBackgroundDrawableChecked != backgroundDrawableChecked) {
                 mBackgroundDrawableChecked = backgroundDrawableChecked;
@@ -707,6 +744,7 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setBackgroundDrawableUnable(Drawable backgroundDrawableUnable) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_UNABLE] = true;
         if (backgroundDrawableUnable != null) {
             if (mBackgroundDrawableUnable != backgroundDrawableUnable) {
                 mBackgroundDrawableUnable = backgroundDrawableUnable;
@@ -724,7 +762,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeNormal == Constant.GRADIENT_TYPE_LINEAR) {
                 if (mGradientOrientationNormal != gradientOrientationNormal) {
                     mGradientOrientationNormal = gradientOrientationNormal;
-                    updateNormalColor();
+                    updateNormalDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -740,7 +778,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypePressed == Constant.GRADIENT_TYPE_LINEAR) {
                 if (mGradientOrientationPressed != gradientOrientationPressed) {
                     mGradientOrientationPressed = gradientOrientationPressed;
-                    updatePressedColor();
+                    updatePressedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -756,7 +794,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeSelected == Constant.GRADIENT_TYPE_LINEAR) {
                 if (mGradientOrientationSelected != gradientOrientationSelected) {
                     mGradientOrientationSelected = gradientOrientationSelected;
-                    updateSelectedColor();
+                    updateSelectedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -772,7 +810,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeChecked == Constant.GRADIENT_TYPE_LINEAR) {
                 if (mGradientOrientationChecked != gradientOrientationChecked) {
                     mGradientOrientationChecked = gradientOrientationChecked;
-                    updateCheckedColor();
+                    updateCheckedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -788,7 +826,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeUnable == Constant.GRADIENT_TYPE_LINEAR) {
                 if (mGradientOrientationUnable != gradientOrientationUnable) {
                     mGradientOrientationUnable = gradientOrientationUnable;
-                    updateUnableColor();
+                    updateUnableDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -804,7 +842,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeNormal == Constant.GRADIENT_TYPE_RADIAL || mGradientTypePressed == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterXNormal != gradientCenterXNormal) {
                     mGradientCenterXNormal = gradientCenterXNormal;
-                    updateNormalColor();
+                    updateNormalDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -820,7 +858,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypePressed == Constant.GRADIENT_TYPE_RADIAL || mGradientTypePressed == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterXPressed != gradientCenterXPressed) {
                     mGradientCenterXPressed = gradientCenterXPressed;
-                    updatePressedColor();
+                    updatePressedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -836,7 +874,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeSelected == Constant.GRADIENT_TYPE_RADIAL || mGradientTypeSelected == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterXSelected != gradientCenterXSelected) {
                     mGradientCenterXSelected = gradientCenterXSelected;
-                    updateSelectedColor();
+                    updateSelectedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -852,7 +890,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeChecked == Constant.GRADIENT_TYPE_RADIAL || mGradientTypeChecked == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterXChecked != gradientCenterXChecked) {
                     mGradientCenterXChecked = gradientCenterXChecked;
-                    updateCheckedColor();
+                    updateCheckedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -868,7 +906,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeUnable == Constant.GRADIENT_TYPE_RADIAL || mGradientTypeUnable == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterXUnable != gradientCenterXUnable) {
                     mGradientCenterXUnable = gradientCenterXUnable;
-                    updateUnableColor();
+                    updateUnableDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -884,7 +922,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeNormal == Constant.GRADIENT_TYPE_RADIAL || mGradientTypeNormal == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterYNormal != gradientCenterYNormal) {
                     mGradientCenterYNormal = gradientCenterYNormal;
-                    updateNormalColor();
+                    updateNormalDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -900,7 +938,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypePressed == Constant.GRADIENT_TYPE_RADIAL || mGradientTypePressed == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterYPressed != gradientCenterYPressed) {
                     mGradientCenterYPressed = gradientCenterYPressed;
-                    updatePressedColor();
+                    updatePressedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -916,7 +954,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeSelected == Constant.GRADIENT_TYPE_RADIAL || mGradientTypeSelected == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterYSelected != gradientCenterYSelected) {
                     mGradientCenterYSelected = gradientCenterYSelected;
-                    updateSelectedColor();
+                    updateSelectedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -932,7 +970,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeChecked == Constant.GRADIENT_TYPE_RADIAL || mGradientTypeChecked == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterYChecked != gradientCenterYChecked) {
                     mGradientCenterYChecked = gradientCenterYChecked;
-                    updateCheckedColor();
+                    updateCheckedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -948,7 +986,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeUnable == Constant.GRADIENT_TYPE_RADIAL || mGradientTypeUnable == Constant.GRADIENT_TYPE_SWEEP) {
                 if (mGradientCenterYUnable != gradientCenterYUnable) {
                     mGradientCenterYUnable = gradientCenterYUnable;
-                    updateUnableColor();
+                    updateUnableDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -964,7 +1002,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeNormal != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientStartColorNormal != gradientStartColorNormal) {
                     mGradientStartColorNormal = gradientStartColorNormal;
-                    updateNormalColor();
+                    updateNormalDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -980,7 +1018,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypePressed != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientStartColorPressed != gradientStartColorPressed) {
                     mGradientStartColorPressed = gradientStartColorPressed;
-                    updatePressedColor();
+                    updatePressedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -996,7 +1034,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeSelected != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientStartColorSelected != gradientStartColorSelected) {
                     mGradientStartColorSelected = gradientStartColorSelected;
-                    updateSelectedColor();
+                    updateSelectedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1012,7 +1050,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeChecked != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientStartColorChecked != gradientStartColorChecked) {
                     mGradientStartColorChecked = gradientStartColorChecked;
-                    updateCheckedColor();
+                    updateCheckedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1028,7 +1066,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeUnable != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientStartColorUnable != gradientStartColorUnable) {
                     mGradientStartColorUnable = gradientStartColorUnable;
-                    updateUnableColor();
+                    updateUnableDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1044,7 +1082,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeNormal != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientCenterColorNormal != gradientCenterColorNormal) {
                     mGradientCenterColorNormal = gradientCenterColorNormal;
-                    updateNormalColor();
+                    updateNormalDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1060,7 +1098,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypePressed != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientCenterColorPressed != gradientCenterColorPressed) {
                     mGradientCenterColorPressed = gradientCenterColorPressed;
-                    updatePressedColor();
+                    updatePressedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1076,7 +1114,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeSelected != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientCenterColorSelected != gradientCenterColorSelected) {
                     mGradientCenterColorSelected = gradientCenterColorSelected;
-                    updateSelectedColor();
+                    updateSelectedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1092,7 +1130,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeChecked != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientCenterColorChecked != gradientCenterColorChecked) {
                     mGradientCenterColorChecked = gradientCenterColorChecked;
-                    updateCheckedColor();
+                    updateCheckedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1108,7 +1146,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeUnable != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientCenterColorUnable != gradientCenterColorUnable) {
                     mGradientCenterColorUnable = gradientCenterColorUnable;
-                    updateUnableColor();
+                    updateUnableDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1124,7 +1162,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeNormal != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientEndColorNormal != gradientEndColorNormal) {
                     mGradientEndColorNormal = gradientEndColorNormal;
-                    updateNormalColor();
+                    updateNormalDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1140,7 +1178,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypePressed != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientEndColorPressed != gradientEndColorPressed) {
                     mGradientEndColorPressed = gradientEndColorPressed;
-                    updatePressedColor();
+                    updatePressedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1156,7 +1194,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeSelected != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientEndColorSelected != gradientEndColorSelected) {
                     mGradientEndColorSelected = gradientEndColorSelected;
-                    updateSelectedColor();
+                    updateSelectedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1172,7 +1210,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeChecked != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientEndColorChecked != gradientEndColorChecked) {
                     mGradientEndColorChecked = gradientEndColorChecked;
-                    updateCheckedColor();
+                    updateCheckedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1188,7 +1226,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeUnable != Constant.GRADIENT_TYPE_NONE) {
                 if (mGradientEndColorUnable != gradientEndColorUnable) {
                     mGradientEndColorUnable = gradientEndColorUnable;
-                    updateUnableColor();
+                    updateUnableDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1204,7 +1242,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeNormal == Constant.GRADIENT_TYPE_RADIAL) {
                 if (mGradientRadiusNormal != gradientRadiusNormal) {
                     mGradientRadiusNormal = gradientRadiusNormal;
-                    updateNormalColor();
+                    updateNormalDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1220,7 +1258,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypePressed == Constant.GRADIENT_TYPE_RADIAL) {
                 if (mGradientRadiusPressed != gradientRadiusPressed) {
                     mGradientRadiusPressed = gradientRadiusPressed;
-                    updatePressedColor();
+                    updatePressedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1236,7 +1274,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeSelected == Constant.GRADIENT_TYPE_RADIAL) {
                 if (mGradientRadiusSelected != gradientRadiusSelected) {
                     mGradientRadiusSelected = gradientRadiusSelected;
-                    updateSelectedColor();
+                    updateSelectedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1252,7 +1290,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeChecked == Constant.GRADIENT_TYPE_RADIAL) {
                 if (mGradientRadiusChecked != gradientRadiusChecked) {
                     mGradientRadiusChecked = gradientRadiusChecked;
-                    updateCheckedColor();
+                    updateCheckedDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1268,7 +1306,7 @@ public class ColorViewHelper<T extends View> {
             if (mGradientTypeUnable == Constant.GRADIENT_TYPE_RADIAL) {
                 if (mGradientRadiusUnable != gradientRadiusUnable) {
                     mGradientRadiusUnable = gradientRadiusUnable;
-                    updateUnableColor();
+                    updateUnableDrawable();
                     recreateViewBackgroundDrawable();
                 }
             }
@@ -1280,10 +1318,11 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setGradientTypeNormal(int gradientTypeNormal) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_NORMAL] = false;
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mGradientTypeNormal != gradientTypeNormal) {
                 mGradientTypeNormal = gradientTypeNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1294,10 +1333,11 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setGradientTypePressed(int gradientTypePressed) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_PRESSED] = false;
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mGradientTypePressed != gradientTypePressed) {
                 mGradientTypePressed = gradientTypePressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1308,10 +1348,11 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setGradientTypeSelected(int gradientTypeSelected) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_SELECTED] = false;
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mGradientTypeSelected != gradientTypeSelected) {
                 mGradientTypeSelected = gradientTypeSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1322,10 +1363,11 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setGradientTypeChecked(int gradientTypeChecked) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_CHECKED] = false;
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mGradientTypeChecked != gradientTypeChecked) {
                 mGradientTypeChecked = gradientTypeChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1336,10 +1378,11 @@ public class ColorViewHelper<T extends View> {
     }
 
     public void setGradientTypeUnable(int gradientTypeUnable) {
+        mBackgroundDrawableExistArray[Constant.STATE_INDEX_UNABLE] = false;
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mGradientTypeUnable != gradientTypeUnable) {
                 mGradientTypeUnable = gradientTypeUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1353,7 +1396,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mCornerRadiusTopLeftNormal != cornerRadiusTopLeftNormal) {
                 mCornerRadiusTopLeftNormal = cornerRadiusTopLeftNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1367,7 +1410,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mCornerRadiusTopLeftPressed != cornerRadiusTopLeftPressed) {
                 mCornerRadiusTopLeftPressed = cornerRadiusTopLeftPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1381,7 +1424,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mCornerRadiusTopLeftSelected != cornerRadiusTopLeftSelected) {
                 mCornerRadiusTopLeftSelected = cornerRadiusTopLeftSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1395,7 +1438,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mCornerRadiusTopLeftChecked != cornerRadiusTopLeftChecked) {
                 mCornerRadiusTopLeftChecked = cornerRadiusTopLeftChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1409,7 +1452,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mCornerRadiusTopLeftUnable != cornerRadiusTopLeftUnable) {
                 mCornerRadiusTopLeftUnable = cornerRadiusTopLeftUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1423,7 +1466,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mCornerRadiusTopRightNormal != cornerRadiusTopRightNormal) {
                 mCornerRadiusTopRightNormal = cornerRadiusTopRightNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1437,7 +1480,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mCornerRadiusTopRightPressed != cornerRadiusTopRightPressed) {
                 mCornerRadiusTopRightPressed = cornerRadiusTopRightPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1451,7 +1494,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mCornerRadiusTopRightSelected != cornerRadiusTopRightSelected) {
                 mCornerRadiusTopRightSelected = cornerRadiusTopRightSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1465,7 +1508,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mCornerRadiusTopRightChecked != cornerRadiusTopRightChecked) {
                 mCornerRadiusTopRightChecked = cornerRadiusTopRightChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1479,7 +1522,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mCornerRadiusTopRightUnable != cornerRadiusTopRightUnable) {
                 mCornerRadiusTopRightUnable = cornerRadiusTopRightUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1493,7 +1536,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mCornerRadiusBottomLeftNormal != cornerRadiusBottomLeftNormal) {
                 mCornerRadiusBottomLeftNormal = cornerRadiusBottomLeftNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1507,7 +1550,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mCornerRadiusBottomLeftPressed != cornerRadiusBottomLeftPressed) {
                 mCornerRadiusBottomLeftPressed = cornerRadiusBottomLeftPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1521,7 +1564,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mCornerRadiusBottomLeftSelected != cornerRadiusBottomLeftSelected) {
                 mCornerRadiusBottomLeftSelected = cornerRadiusBottomLeftSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1535,7 +1578,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mCornerRadiusBottomLeftChecked != cornerRadiusBottomLeftChecked) {
                 mCornerRadiusBottomLeftChecked = cornerRadiusBottomLeftChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1549,7 +1592,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mCornerRadiusBottomLeftUnable != cornerRadiusBottomLeftUnable) {
                 mCornerRadiusBottomLeftUnable = cornerRadiusBottomLeftUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1563,7 +1606,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mCornerRadiusBottomRightNormal != cornerRadiusBottomRightNormal) {
                 mCornerRadiusBottomRightNormal = cornerRadiusBottomRightNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1577,7 +1620,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mCornerRadiusBottomRightPressed != cornerRadiusBottomRightPressed) {
                 mCornerRadiusBottomRightPressed = cornerRadiusBottomRightPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1591,7 +1634,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mCornerRadiusBottomRightSelected != cornerRadiusBottomRightSelected) {
                 mCornerRadiusBottomRightSelected = cornerRadiusBottomRightSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1605,7 +1648,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mCornerRadiusBottomRightChecked != cornerRadiusBottomRightChecked) {
                 mCornerRadiusBottomRightChecked = cornerRadiusBottomRightChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1619,7 +1662,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mCornerRadiusBottomRightUnable != cornerRadiusBottomRightUnable) {
                 mCornerRadiusBottomRightUnable = cornerRadiusBottomRightUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1633,7 +1676,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mBorderWidthNormal != borderWidthNormal) {
                 mBorderWidthNormal = borderWidthNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1647,7 +1690,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mBorderWidthPressed != borderWidthPressed) {
                 mBorderWidthPressed = borderWidthPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1661,7 +1704,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mBorderWidthSelected != borderWidthSelected) {
                 mBorderWidthSelected = borderWidthSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1675,7 +1718,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mBorderWidthChecked != borderWidthChecked) {
                 mBorderWidthChecked = borderWidthChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1689,7 +1732,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mBorderWidthUnable != borderWidthUnable) {
                 mBorderWidthUnable = borderWidthUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1703,7 +1746,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mBorderDashWidthNormal != borderDashWidthNormal) {
                 mBorderDashWidthNormal = borderDashWidthNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1717,7 +1760,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mBorderDashWidthPressed != borderDashWidthPressed) {
                 mBorderDashWidthPressed = borderDashWidthPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1731,7 +1774,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mBorderDashWidthSelected != borderDashWidthSelected) {
                 mBorderDashWidthSelected = borderDashWidthSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1745,7 +1788,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mBorderDashWidthChecked != borderDashWidthChecked) {
                 mBorderDashWidthChecked = borderDashWidthChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1759,7 +1802,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mBorderDashWidthUnable != borderDashWidthUnable) {
                 mBorderDashWidthUnable = borderDashWidthUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1773,7 +1816,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mBorderDashGapNormal != borderDashGapNormal) {
                 mBorderDashGapNormal = borderDashGapNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1787,7 +1830,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mBorderDashGapPressed != borderDashGapPressed) {
                 mBorderDashGapPressed = borderDashGapPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1801,7 +1844,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mBorderDashGapSelected != borderDashGapSelected) {
                 mBorderDashGapSelected = borderDashGapSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1815,7 +1858,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mBorderDashGapChecked != borderDashGapChecked) {
                 mBorderDashGapChecked = borderDashGapChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1829,7 +1872,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mBorderDashGapUnable != borderDashGapUnable) {
                 mBorderDashGapUnable = borderDashGapUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1843,7 +1886,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableNormal instanceof GradientDrawable) {
             if (mBorderColorNormal != borderColorNormal) {
                 mBorderColorNormal = borderColorNormal;
-                updateNormalColor();
+                updateNormalDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1857,7 +1900,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawablePressed instanceof GradientDrawable) {
             if (mBorderColorPressed != borderColorPressed) {
                 mBorderColorPressed = borderColorPressed;
-                updatePressedColor();
+                updatePressedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1871,7 +1914,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableSelected instanceof GradientDrawable) {
             if (mBorderColorSelected != borderColorSelected) {
                 mBorderColorSelected = borderColorSelected;
-                updateSelectedColor();
+                updateSelectedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1885,7 +1928,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableChecked instanceof GradientDrawable) {
             if (mBorderColorChecked != borderColorChecked) {
                 mBorderColorChecked = borderColorChecked;
-                updateCheckedColor();
+                updateCheckedDrawable();
                 recreateViewBackgroundDrawable();
             }
         }
@@ -1899,7 +1942,7 @@ public class ColorViewHelper<T extends View> {
         if (mBackgroundDrawableUnable instanceof GradientDrawable) {
             if (mBorderColorUnable != borderColorUnable) {
                 mBorderColorUnable = borderColorUnable;
-                updateUnableColor();
+                updateUnableDrawable();
                 recreateViewBackgroundDrawable();
             }
         }

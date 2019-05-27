@@ -8,7 +8,7 @@ ColorView
 
 **1. Gradle 添加引用**
 
-    compile 'com.wei.android.lib:colorview:1.3.1'
+    compile 'com.wei.android.lib:colorview:1.3.2'
 
 **2. 拓展的View**
 
@@ -80,6 +80,8 @@ ColorView
 [1. 当四个圆角的值不一样时，背景绘制的效果有些不准确，圆角值越大越明显，Selector也有一样的问题。](https://issuetracker.google.com/issues/70461762 "Google Issue")
 
 **6. 版本记录**
+
+**v1.3.2**　`2019.05.27`　背景支持颜色和图片混搭组合。
 
 **v1.3.1**　`2019.01.03`　支持点击背景添加遮罩层效果。
 

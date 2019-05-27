@@ -29,7 +29,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
@@ -40,7 +40,7 @@ publish {
     userOrg = 'uccmawei'
     groupId = 'com.wei.android.lib'
     artifactId = 'colorview'
-    publishVersion = '1.3.1'
+    publishVersion = '1.3.2'
     desc = 'Encoder your colorful selector with XML.'
     website = 'https://github.com/uccmawei/ColorView'
 }
