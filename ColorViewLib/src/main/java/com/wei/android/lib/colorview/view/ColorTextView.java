@@ -49,6 +49,8 @@ public class ColorTextView extends AppCompatTextView {
                 R.styleable.ColorTextView_textColorChecked,
                 R.styleable.ColorTextView_textColorUnable,
 
+                R.styleable.ColorTextView_textStrokeWidth,
+
                 getCurrentHintTextColor(),
                 R.styleable.ColorTextView_textColorHintNormal,
                 R.styleable.ColorTextView_textColorHintPressed,

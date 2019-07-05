@@ -8,7 +8,7 @@ ColorView
 
 **1. Gradle 添加引用**
 
-    compile 'com.wei.android.lib:colorview:1.3.2'
+    compile 'com.wei.android.lib:colorview:1.3.3'
 
 **2. 拓展的View**
 
@@ -62,6 +62,7 @@ ColorView
     app:drawableBottomHeight="20dp"                     // 下边图标高度
 
     app:backgroundTintPressed="#33FF0000"               // 点击时背景遮罩层，仅支持5.0及以上系统
+    app:textStrokeWidth="0.1"                           // 文字加粗
 
 **3. 属性介绍**
 
@@ -75,11 +76,9 @@ ColorView
 
 [1. 加粗边框时需要重新构建背景对象，否则背景边框绘制不正确。](https://issuetracker.google.com/issues/70444558 "Google Issue")
 
-**5. 本库小瑕疵**
+**5. 版本记录**
 
-[1. 当四个圆角的值不一样时，背景绘制的效果有些不准确，圆角值越大越明显，Selector也有一样的问题。](https://issuetracker.google.com/issues/70461762 "Google Issue")
-
-**6. 版本记录**
+**v1.3.3**　`2019.07.05`　文字支持无极加粗。
 
 **v1.3.2**　`2019.05.27`　背景支持颜色和图片混搭组合。
 

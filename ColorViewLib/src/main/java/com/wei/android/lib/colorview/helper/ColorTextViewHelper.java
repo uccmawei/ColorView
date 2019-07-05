@@ -2,6 +2,7 @@ package com.wei.android.lib.colorview.helper;
 
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 
@@ -20,6 +21,9 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
     private int mTextColorSelected;
     private int mTextColorChecked;
     private int mTextColorUnable;
+
+    // 文字加粗
+    private float mTextStrokeWidth;
 
     // 文字颜色
     private int mTextColorHintNormal;
@@ -40,6 +44,8 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
                                int textColorSelected,
                                int textColorChecked,
                                int textColorUnable,
+
+                               int textStrokeWidth,
 
                                int currentTextColorHint,
                                int textColorHintNormal,
@@ -325,6 +331,8 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
         mTextColorChecked = typedArray.getColor(textColorChecked, mTextColorNormal);
         mTextColorUnable = typedArray.getColor(textColorUnable, mTextColorNormal);
 
+        mTextStrokeWidth = typedArray.getFloat(textStrokeWidth, -1);
+
         mTextColorHintNormal = typedArray.getColor(textColorHintNormal, currentTextColorHint);
         mTextColorHintPressed = typedArray.getColor(textColorHintPressed, mTextColorHintNormal);
         mTextColorHintSelected = typedArray.getColor(textColorHintSelected, mTextColorHintNormal);
@@ -371,15 +379,25 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
                 drawableBottomHeight);
 
         updateTextColor();
+        updateTextStrokeWidth();
         updateTextColorHint();
     }
 
-    // 文字颜色
+    // 内容文字颜色
     private void updateTextColor() {
         int[] colors = {mTextColorUnable, mTextColorPressed, mTextColorSelected, mTextColorChecked, mTextColorNormal, mTextColorNormal};
         mView.setTextColor(new ColorStateList(Constant.STATE_ARRAY, colors));
     }
 
+    // 加粗
+    private void updateTextStrokeWidth() {
+        if (mTextStrokeWidth >= 0) {
+            mView.getPaint().setStyle(Paint.Style.FILL_AND_STROKE);
+            mView.getPaint().setStrokeWidth(mTextStrokeWidth);
+        }
+    }
+
+    // 提示文字颜色
     private void updateTextColorHint() {
         int[] colors = {mTextColorHintUnable, mTextColorHintPressed, mTextColorHintSelected, mTextColorHintChecked, mTextColorHintNormal, mTextColorHintNormal};
         mView.setHintTextColor(new ColorStateList(Constant.STATE_ARRAY, colors));
@@ -823,5 +841,10 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
             mCompoundDrawables.mDrawableBottomHeight = drawableBottomHeight;
             mCompoundDrawables.updateDrawableAndSize();
         }
+    }
+
+    public void setTextStrokeWidth(float textStrokeWidth) {
+        mTextStrokeWidth = textStrokeWidth;
+        updateTextStrokeWidth();
     }
 }

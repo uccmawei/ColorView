@@ -49,6 +49,8 @@ public class ColorEditText extends AppCompatEditText {
                 R.styleable.ColorEditText_textColorChecked,
                 R.styleable.ColorEditText_textColorUnable,
 
+                R.styleable.ColorEditText_textStrokeWidth,
+
                 getCurrentHintTextColor(),
                 R.styleable.ColorEditText_textColorHintNormal,
                 R.styleable.ColorEditText_textColorHintPressed,

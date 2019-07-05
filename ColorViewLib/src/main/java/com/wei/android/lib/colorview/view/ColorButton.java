@@ -49,6 +49,8 @@ public class ColorButton extends AppCompatButton {
                 R.styleable.ColorButton_textColorChecked,
                 R.styleable.ColorButton_textColorUnable,
 
+                R.styleable.ColorButton_textStrokeWidth,
+
                 getCurrentHintTextColor(),
                 R.styleable.ColorButton_textColorHintNormal,
                 R.styleable.ColorButton_textColorHintPressed,

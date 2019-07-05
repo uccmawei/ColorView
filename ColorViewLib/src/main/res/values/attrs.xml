@@ -143,6 +143,9 @@
     <attr name="textColorChecked" format="color" />
     <attr name="textColorUnable" format="color" />
 
+    <!-- 文字加粗 -->
+    <attr name="textStrokeWidth" format="float" />
+
     <!-- 文字颜色 -->
     <attr name="textColorHintNormal" format="color" />
     <attr name="textColorHintPressed" format="color" />
@@ -334,6 +337,8 @@
         <attr name="textColorChecked" />
         <attr name="textColorUnable" />
 
+        <attr name="textStrokeWidth" />
+
         <attr name="textColorHintNormal" />
         <attr name="textColorHintPressed" />
         <attr name="textColorHintSelected" />
@@ -499,6 +504,8 @@
         <attr name="textColorSelected" />
         <attr name="textColorChecked" />
         <attr name="textColorUnable" />
+
+        <attr name="textStrokeWidth" />
 
         <attr name="textColorHintNormal" />
         <attr name="textColorHintPressed" />
@@ -783,6 +790,8 @@
         <attr name="textColorSelected" />
         <attr name="textColorChecked" />
         <attr name="textColorUnable" />
+
+        <attr name="textStrokeWidth" />
 
         <attr name="textColorHintNormal" />
         <attr name="textColorHintPressed" />

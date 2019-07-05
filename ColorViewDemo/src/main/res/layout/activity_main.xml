@@ -61,7 +61,8 @@
             app:backgroundColorNormal="#eb4e6d"
             app:cornerRadiusBottomRightNormal="10dp"
             app:cornerRadiusTopLeftNormal="10dp"
-            app:textColorNormal="#FFFFFF" />
+            app:textColorNormal="#FFFFFF"
+            app:textStrokeWidth="1.0" />
 
         <TextView
             android:layout_width="wrap_content"
