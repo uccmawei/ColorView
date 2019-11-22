@@ -297,16 +297,16 @@ public class ColorViewHelper<T extends View> {
         mBackgroundDrawableChecked = typedArray.getDrawable(backgroundDrawableChecked);
         mBackgroundDrawableUnable = typedArray.getDrawable(backgroundDrawableUnable);
         if (mBackgroundDrawableNormal != null) {
-            if (mBackgroundDrawablePressed == null) {
+            if (!mBackgroundDrawableExistArray[Constant.STATE_INDEX_PRESSED]) {
                 mBackgroundDrawablePressed = typedArray.getDrawable(backgroundDrawableNormal);
             }
-            if (mBackgroundDrawableSelected == null) {
+            if (!mBackgroundDrawableExistArray[Constant.STATE_INDEX_SELECTED]) {
                 mBackgroundDrawableSelected = typedArray.getDrawable(backgroundDrawableNormal);
             }
-            if (mBackgroundDrawableChecked == null) {
+            if (!mBackgroundDrawableExistArray[Constant.STATE_INDEX_CHECKED]) {
                 mBackgroundDrawableChecked = typedArray.getDrawable(backgroundDrawableNormal);
             }
-            if (mBackgroundDrawableUnable == null) {
+            if (!mBackgroundDrawableExistArray[Constant.STATE_INDEX_UNABLE]) {
                 mBackgroundDrawableUnable = typedArray.getDrawable(backgroundDrawableNormal);
             }
         }
@@ -422,11 +422,22 @@ public class ColorViewHelper<T extends View> {
         mHasBackgroundColorTintPressed = typedArray.hasValue(backgroundColorTintPressed);
         mBackgroundColorTintPressed = typedArray.getColor(backgroundColorTintPressed, Color.TRANSPARENT);
 
-        updateNormalDrawable();
-        updatePressedDrawable();
-        updateSelectedDrawable();
-        updateCheckedDrawable();
-        updateUnableDrawable();
+        if (mBackgroundDrawableNormal == null) {
+            updateNormalDrawable();
+        }
+        if (mBackgroundDrawablePressed == null) {
+            updatePressedDrawable();
+        }
+        if (mBackgroundDrawableSelected == null) {
+            updateSelectedDrawable();
+        }
+        if (mBackgroundDrawableChecked == null) {
+            updateCheckedDrawable();
+        }
+        if (mBackgroundDrawableUnable == null) {
+            updateUnableDrawable();
+        }
+
         updatePressedTint();
 
         // 生成背景
