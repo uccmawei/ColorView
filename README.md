@@ -8,7 +8,7 @@ ColorView
 
 **1. Gradle 添加引用**
 
-    compile 'com.wei.android.lib:colorview:1.3.4'
+    compile 'com.wei.android.lib:colorview:1.3.5'
 
 **2. 拓展的View**
 
@@ -77,6 +77,8 @@ ColorView
 [1. 加粗边框时需要重新构建背景对象，否则背景边框绘制不正确。](https://issuetracker.google.com/issues/70444558 "Google Issue")
 
 **5. 版本记录**
+
+**v1.3.5**　`2021.02.02`　细节调整，底层类改为AppCompatXXX。
 
 **v1.3.3**　`2019.11.22`　修复默认背景Drawable错误。
 
