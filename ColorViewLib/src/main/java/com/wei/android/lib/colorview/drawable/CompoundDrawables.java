@@ -13,7 +13,7 @@ import com.wei.android.lib.colorview.utils.Constant;
 
 public class CompoundDrawables {
 
-    private TextView mTextView;
+    private final TextView mTextView;
 
     // 边缘图标
     private StateListDrawable mCompoundDrawablesLeft;

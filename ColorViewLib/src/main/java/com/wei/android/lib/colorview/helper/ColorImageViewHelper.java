@@ -3,7 +3,8 @@ package com.wei.android.lib.colorview.helper;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
-import android.widget.ImageView;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.wei.android.lib.colorview.utils.Constant;
 
@@ -11,7 +12,7 @@ import com.wei.android.lib.colorview.utils.Constant;
  * Created by UCCMAWEI on 2017/11/17.
  */
 
-public class ColorImageViewHelper extends ColorViewHelper<ImageView> {
+public class ColorImageViewHelper extends ColorViewHelper<AppCompatImageView> {
 
     // 图片
     private Drawable mSrcNormal;
@@ -20,7 +21,7 @@ public class ColorImageViewHelper extends ColorViewHelper<ImageView> {
     private Drawable mSrcChecked;
     private Drawable mSrcUnable;
 
-    public ColorImageViewHelper(ImageView imageView,
+    public ColorImageViewHelper(AppCompatImageView imageView,
                                 TypedArray typedArray,
 
                                 int srcNormal,

@@ -6,12 +6,12 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-import com.wei.android.lib.colorview.R;
-import com.wei.android.lib.colorview.helper.ColorTextViewHelper;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.widget.AppCompatEditText;
+
+import com.wei.android.lib.colorview.R;
+import com.wei.android.lib.colorview.helper.ColorTextViewHelper;
 
 /**
  * Created by UCCMAWEI on 2017/11/17.

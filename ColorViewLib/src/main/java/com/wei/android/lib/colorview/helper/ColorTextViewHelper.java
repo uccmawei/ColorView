@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.wei.android.lib.colorview.drawable.CompoundDrawables;
 import com.wei.android.lib.colorview.utils.Constant;
 
+
 /**
  * Created by UCCMAWEI on 2017/11/17.
  */
@@ -33,7 +34,7 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
     private int mTextColorHintUnable;
 
     // 边缘图标
-    private CompoundDrawables mCompoundDrawables;
+    private final CompoundDrawables mCompoundDrawables;
 
     public ColorTextViewHelper(TextView textView,
                                TypedArray typedArray,
@@ -843,8 +844,14 @@ public class ColorTextViewHelper extends ColorViewHelper<TextView> {
         }
     }
 
+    public float getTextStrokeWidth() {
+        return mTextStrokeWidth;
+    }
+
     public void setTextStrokeWidth(float textStrokeWidth) {
-        mTextStrokeWidth = textStrokeWidth;
-        updateTextStrokeWidth();
+        if (mTextStrokeWidth != textStrokeWidth) {
+            mTextStrokeWidth = textStrokeWidth;
+            updateTextStrokeWidth();
+        }
     }
 }

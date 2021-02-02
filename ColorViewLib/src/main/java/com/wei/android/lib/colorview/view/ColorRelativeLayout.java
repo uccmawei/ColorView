@@ -8,13 +8,13 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.wei.android.lib.colorview.R;
-import com.wei.android.lib.colorview.helper.ColorViewHelper;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+
+import com.wei.android.lib.colorview.R;
+import com.wei.android.lib.colorview.helper.ColorViewHelper;
 
 /**
  * Created by UCCMAWEI on 2017/11/17.

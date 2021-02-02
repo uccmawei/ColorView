@@ -5,13 +5,14 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-import com.wei.android.lib.colorview.R;
-import com.wei.android.lib.colorview.helper.ColorImageViewHelper;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+
+import com.wei.android.lib.colorview.R;
+import com.wei.android.lib.colorview.helper.ColorImageViewHelper;
+
 
 /**
  * Created by UCCMAWEI on 2017/11/17.

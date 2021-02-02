@@ -12,6 +12,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 
 import com.wei.android.lib.colorview.utils.Constant;
 
+
 /**
  * Created by UCCMAWEI on 2017/11/17.
  */
@@ -31,7 +32,7 @@ public class ColorViewHelper<T extends View> {
     private Drawable mBackgroundDrawableSelected;
     private Drawable mBackgroundDrawableChecked;
     private Drawable mBackgroundDrawableUnable;
-    private boolean[] mBackgroundDrawableExistArray = new boolean[Constant.STATE_INDEX_COUNT];
+    private final boolean[] mBackgroundDrawableExistArray = new boolean[Constant.STATE_INDEX_COUNT];
 
     // 渐变色背景
     private int mGradientOrientationNormal;
