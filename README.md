@@ -8,7 +8,15 @@ ColorView
 
 **1. Gradle 添加引用**
 
-    compile 'com.wei.android.lib:colorview:1.3.5'
+    allprojects {
+    	repositories {
+    		...
+    		maven { url 'https://jitpack.io' }
+    	}
+    }
+    dependencies {
+    	implementation 'com.github.uccmawei:ColorView:1.3.5'
+    }
 
 **2. 拓展的View**
 
